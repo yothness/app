@@ -17,7 +17,8 @@ export default function FootBall({ data }: { data: any }) {
         <span className="counter">{data.primary?.goal}</span>
       </div>
       <div className="timer flex">
-         <img src={data.top?.image} alt={data.top?.name} />
+          <span className="name">{data.top?.name}</span>
+          <img src={data.top?.image} alt={data.top?.name} />
           <div className="timestamp">{data.timestamp}</div>
       </div>
       <div className="aria-counter flex secundary">

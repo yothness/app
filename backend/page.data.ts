@@ -37,7 +37,7 @@ export default async function Data(
     data.sports = {
       list: t.map((q) => ({
         top: q.league ? {
-          name: q.league.name + " (" + q.league.country + ")" + "\n" + (i18n["sport.status." + q.fixture?.status?.short] || "——"),
+          name: q.league.name + " (" + q.league.country + ")",
           image: q.league.logo,
         } : {},
         id: q.fixture?.id?.toString(),
@@ -53,7 +53,7 @@ export default async function Data(
         },
         timestamp: "Start at " + new Date(q.fixture?.timestamp).toLocaleTimeString("en-US", {
   timeZone: props.client?.timeZone || "UTC"
-}),
+}) + "\n" + (i18n["sport.status." + q.fixture?.status?.short] || "——"),
       }))
     }
     break;

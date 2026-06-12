@@ -7,7 +7,7 @@ import Data from './page.data'
 import M from '../lang.json'
 const i18nData = M as any;
 
-const version = "u92nLj82"
+const version = "AAAAAAA82YYGD8N"
 
 const allowedCharsets = [
   "utf-8",
@@ -33,11 +33,11 @@ function resolveLanguage(
   preferredLanguage?: string,
 ): string {
 
-  // Linguagem principal (query, cookie, user config, etc.)
+
   const primary = findLanguage(preferredLanguage);
   if (primary) return primary;
 
-  // Accept-Language: pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7
+
   const languages = acceptLanguageHeader
     .split(",")
     .map(lang => lang.split(";")[0].trim());
