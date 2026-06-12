@@ -4,16 +4,11 @@
     {
       "src": "backend/app.ts",
       "use": "@vercel/node"
-    },
-    {
-      "src": "public/static",
-      "use": "@vercel/static-build"
     }
   ],
   "routes": [
-    {
-      "src": "/s/(.*)",
-      "dest": "/public/static/$1"
+{
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
