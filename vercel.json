@@ -4,18 +4,20 @@
     {
       "src": "backend/app.ts",
       "use": "@vercel/node"
+    },
+    {
+      "src": "public/static/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "backend/app.ts"
-    }
-  ],
-  "rewrites": [
+      "src": "/s/(.*)",
+      "dest": "/public/static/$1"
+    },
     {
-      "source": "/s/(.*)",
-      "destination": "/public/s/$1"
+      "src": "/(.*)",
+      "dest": "/backend/app.ts"
     }
   ]
 }
