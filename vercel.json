@@ -8,11 +8,14 @@
   ],
   "routes": [
     {
-      "handle": "filesystem"
-    },
-    {
       "src": "/(.*)",
       "dest": "backend/app.ts"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/s/(.*)",
+      "destination": "/public/s/$1"
     }
   ]
 }
