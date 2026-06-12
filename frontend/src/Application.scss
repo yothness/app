@@ -1,0 +1,251 @@
+
+@font-face {
+  font-family: 'Material Symbols Rounded';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/materialsymbolsrounded/v327/syl7-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvLgyidOK7BDB_Qb9vUdV6_gjDK-P3JuF_Zs-obHph2-jOcOzKPqw.woff2) format('woff2');
+}
+
+.msr-icon {
+  user-select: none;
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Sans-Serif;
+  background: #f8f9fb;
+  color: #101418;
+}
+.service{
+  &,&:after{background: #eee;}
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0b0d10;
+    color: #eee;
+  }
+  .service {
+  &,&:after{  background: #0b0d10;}
+  }
+}
+.endpoint {
+  text-decoration: none;
+  color: inherit;
+}
+
+#application {
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 56px;
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-top: 18vh;
+    margin-bottom: 16vh;
+    font-size: 38px;
+    align-items: center;
+    display: flex;
+    span {
+      font-size: 16vw;
+      opacity: .4;
+      margin: auto;
+    }
+  }
+}
+
+.service {
+  ._0x1 {
+    margin: 0 8px;
+  }
+  flex: 1;
+  padding: 0 21px;
+  margin: 0 -16px;
+  border-radius: 24px 24px 0 0;
+    box-shadow: 0 0 8px #0002 inset;
+    img {
+      width: 16px;
+      height: 16px;
+    }
+    .msr-icon {
+    color: var(--c);
+  }
+  &-endpoint {
+    &:hover {
+    color: var(--c);
+      
+  &:before {
+    z-index: -1;
+    border-radius: 12px;
+    opacity: .2;
+    background: var(--c);
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    right: 0;
+    width: 100%;
+  }
+    }
+    background: #8881;
+    width: 33%;
+    width: calc(33.3333% - 8px);
+    height: 64px;
+    text-align: center;
+  padding: 0 16px;
+  position: relative;
+    box-shadow: 0 0 8px #0002;
+    
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    z-index: 2;
+    border-radius: 12px;
+    box-sizing: border-box;
+border: 2px solid #0000;
+    @media (max-width: 600px) {
+      width: 50%;
+      width: calc(50% - 8px);
+    }
+    @media (min-width: 1024px) {
+      width: 25%;
+      width: calc(25% - 8px);
+    }
+    @media (min-width: 1200px) {
+      width: 16.6666666666%;
+      width: calc(16.6666666666% - 8px);
+    }
+  }
+  &-title {
+    position: relative;
+    text-align: center;
+  }
+  &s {
+    gap: 8px;
+    flex-wrap: wrap;
+    display: flex;
+  }
+}
+
+
+/*** modules ***/
+.f73 {
+  background: #fff1;
+  display: flex;
+  
+  max-width: 700px;
+  width: 80vw;
+  position: relative;
+  flex-direction: column;
+  border-radius: 24px;
+  input { background: #0000; border:none;color:inherit; outline: none;; flex:1; padding: 0 16px; box-sizing: border-box;}
+  [type="submit"] { width: 64px;border:none; background: #0000; color:inherit}
+  .box {
+  border-radius: 24px;
+    position: absolute;
+    top: 120%;
+    height: max-content;
+    background: #eee1;
+    padding: 16px 0;
+    left: 0;
+    right: 0;
+  }
+
+}
+.d73 {
+  flex: 1;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h1 {
+    font-weight: 800;
+    font-size: 48px;
+  }
+}
+.d74 {
+  height: 48px;
+  min-height: 48px;
+  flex: 1;
+  display:flex;
+}
+.d70 {
+  height: 38px;
+  display:flex;
+  padding: 0 16px;
+  cursor: pointer;
+  align-items: center;
+}
+
+
+/* read-mode */
+body.read-mode:before {
+  position: fixed;
+  z-index: 999999999;
+  background: #f2970044;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+
+.update-card {
+  
+  z-index: 1;
+  padding: 16px;
+  margin: 0 -16px;
+  position: relative;
+  .bg {
+    border-radius: 12px;
+    opacity: .1;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
+.badge--feature {
+  background: #1d4ed8;
+}
+
+.badge--fix {
+  background: #ca8a04;
+}
+
+.badge--security {
+  background: #dc2626;
+}
+
+.badge--update {
+  background: #16a34a;
+}
+
+
+/** utils **/
+.flex {
+  display: flex;
+}

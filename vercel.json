@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/s/(.*)",
+      "dest": "/public/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/backend/index.ts"
+    }
+  ]
+}

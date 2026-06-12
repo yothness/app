@@ -1,0 +1,59 @@
+.sports- {
+  &rows {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+    padding: 0 32px;
+    margin-top: 16px;
+    box-sizing: border-box;
+    overflow: auto;
+    img {
+      display: block;
+    }
+  }
+  &box {
+    border-radius: 16px;
+    background: #0008;
+    border: 1px solid #fff1;
+    padding: 16px;
+    width: 508px;
+    max-width: 80vw;
+    .secundary {
+      justify-content: end;
+    }
+    .aria-counter {
+      align-items: center;
+      flex: 1;
+      img {
+        font-size: 0;
+        width: 48px;
+        height: 48px;
+      }
+      .name {
+        font-size: 12px;
+      }
+    }
+    .timer {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+        color: #0f0;font-weight: 800;
+        font-size: 12px;
+      img {
+        width: 16px;
+        margin: 12px 0;
+        border-radius: 2px;
+      }
+    }
+    .counter {
+      color: #fff;
+      margin: 16px;
+      font-size: 21px;
+    }
+    .team {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+}

@@ -1,0 +1,67 @@
+{
+  "en": {
+    "NAME": "English",
+    "LANG": "en-US",
+    
+    "apps.all_service": "Discover all of Yothness's services!",
+    "apps.title": "Apps & Services",
+    
+    "about.title": "Yothness, Make Your Dreams Come True",
+    "about.some_apps": "Discover some of Yothness's services!",
+    
+    "update.title": "News & Updates",
+    "update.status.newness": "Newness",
+    
+    "families.title": "Help keep your family safer online",
+    
+    "_linguage": "Linguage",
+    "_linguage.select": "Select a language",
+    
+    "_off": "Off",
+    "_on": "On"
+  },
+  "es": {
+    "NAME": "Español",
+    "LANG": "es-ES",
+    
+    "apps.all_service": "¡Descubre todos los servicios de Yothness!",
+    "apps.title": "Aplicaciones & servicios",
+    
+    "about.title": "Yothness, Haz realidad tus sueños",
+    "about.some_apps": "¡Descubre algunos de los servicios de Yothness!",
+    
+    "update.title": "Novedades & actualizaciones",
+    "update.status.newness": "Novedad",
+    
+    "families.title": "Ayuda a mantener a tu familia más segura en línea",
+    
+    "_linguage": "Idioma",
+    "_linguage.select": "Seleccione un idioma",
+    
+    "_off": "Desactivado",
+    "_on": "Activado"
+  },
+  "pt": {
+    "NAME": "Português",
+    "LANG": "pt-BR",
+    
+    "apps.all_service": "Descubra todos os serviços da Yothness!",
+    "apps.title": "Aplicativos e Serviços",
+    
+    "about.title": "Yothness, Realize Seus Sonhos",
+    "about.some_apps": "Descubra alguns dos serviços da Yothness!",
+    
+    
+    "update.title": "Notícias e Atualizações",
+    "update.status.newness": "Novidades",
+    
+    
+    "families.title": "Ajude a manter sua família mais segura online",
+    
+    "_linguage": "Idioma",
+    "_linguage.select": "Selecione um idioma",
+    
+    "_off": "Desativado",
+    "_on": "Ativado"
+  }
+}
