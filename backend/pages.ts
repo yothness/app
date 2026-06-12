@@ -84,7 +84,7 @@ export default function Page(pageId: string, fn?: (c: Context) => any) {
         timeZone: c.req.header('x-vercel-ip-timezone') || 'UTC'
       }
       
-      const isDev = process.env.NODE_ENV === "production"
+      const isDev = process.env.is_dev === "1"
       
       if (c.req.query("reload_lang") === "1") {
         sq.set("hl",  props.client.hl)
