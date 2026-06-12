@@ -18,7 +18,25 @@
     "_linguage.select": "Select a language",
     
     "_off": "Off",
-    "_on": "On"
+    "_on": "On",
+    
+    
+        "sport.status.NS": "Not Started",
+    "sport.status.1H": "First Half",
+    "sport.status.HT": "Half Time",
+    "sport.status.2H": "Second Half",
+    "sport.status.ET": "Extra Time",
+    "sport.status.BT": "Extra Time Break",
+    "sport.status.P": "Penalty Shootout",
+    "sport.status.LIVE": "Live",
+    "sport.status.FT": "Finished",
+    "sport.status.AET": "After Extra Time",
+    "sport.status.PEN": "After Penalties",
+    "sport.status.PST": "Postponed",
+    "sport.status.CANC": "Cancelled",
+    "sport.status.ABD": "Abandoned",
+    "sport.status.AWD": "Awarded",
+    "sport.status.WO": "Walkover"
   },
   "es": {
     "NAME": "Español",
@@ -39,7 +57,24 @@
     "_linguage.select": "Seleccione un idioma",
     
     "_off": "Desactivado",
-    "_on": "Activado"
+    "_on": "Activado",
+    
+        "sport.status.NS": "No Iniciado",
+    "sport.status.1H": "Primer Tiempo",
+    "sport.status.HT": "Descanso",
+    "sport.status.2H": "Segundo Tiempo",
+    "sport.status.ET": "Prórroga",
+    "sport.status.BT": "Descanso de la Prórroga",
+    "sport.status.P": "Penaltis",
+    "sport.status.LIVE": "En Vivo",
+    "sport.status.FT": "Finalizado",
+    "sport.status.AET": "Finalizado tras Prórroga",
+    "sport.status.PEN": "Finalizado en Penaltis",
+    "sport.status.PST": "Aplazado",
+    "sport.status.CANC": "Cancelado",
+    "sport.status.ABD": "Suspendido",
+    "sport.status.AWD": "Victoria por W.O.",
+    "sport.status.WO": "W.O."
   },
   "pt": {
     "NAME": "Português",
@@ -62,6 +97,23 @@
     "_linguage.select": "Selecione um idioma",
     
     "_off": "Desativado",
-    "_on": "Ativado"
+    "_on": "Ativado",
+    
+    "sport.status.NS": "Não Iniciado",
+    "sport.status.1H": "Primeiro Tempo",
+    "sport.status.HT": "Intervalo",
+    "sport.status.2H": "Segundo Tempo",
+    "sport.status.ET": "Prorrogação",
+    "sport.status.BT": "Intervalo da Prorrogação",
+    "sport.status.P": "Pênaltis",
+    "sport.status.LIVE": "Ao Vivo",
+    "sport.status.FT": "Encerrado",
+    "sport.status.AET": "Encerrado na Prorrogação",
+    "sport.status.PEN": "Encerrado nos Pênaltis",
+    "sport.status.PST": "Adiado",
+    "sport.status.CANC": "Cancelado",
+    "sport.status.ABD": "Abandonado",
+    "sport.status.AWD": "Vitória por W.O.",
+    "sport.status.WO": "W.O."
   }
 }
