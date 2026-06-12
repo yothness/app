@@ -29,6 +29,7 @@ export default async function Data(
   
   switch (pageId) {
   case "home":
+    if (props.client?.slc) {
     const t = await getFixtures({
       limit: 3,
       country: countryHttp || props.client?.gl || "br"
@@ -56,6 +57,7 @@ export default async function Data(
 }) + "\n" + (i18n["sport.status." + q.fixture?.status?.short] || "——"),
       }))
     }
+    }
     break;
   case "preferences":
     const keys: any[] = Object.keys(i18nData);
@@ -74,7 +76,7 @@ export default async function Data(
           [2, i18n["_linguage.select"], keys, props.client?.hl, "?hl=$&reload_lang=1"],
           [0, "Soccer / Football"],
           [1, "Choose whether football matches and scores are displayed on the home page."],
-          [2, "Show", [["0", i18n["_off"]], ["1", i18n["_on"]]], "0", "?sfc=$&reload_sfc=1&" + qHl],
+          [2, "Show", [["0", i18n["_off"]], ["1", i18n["_on"]]], String(+props.client?.slc), "?sfc=$&reload_sfc=1&" + qHl],
           [0, "Theme"],
           [2, "Select Theme", [["-1", "Device theme"]], "-1", ["thm"]],
         ],

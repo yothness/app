@@ -65,7 +65,7 @@ export default function Page(pageId: string, fn?: (c: Context) => any) {
         "X-Frame-Options": "SAMEORIGIN",
       }
       
-      const pref = getCookie(c, "PREF") || ""
+      const pref = getCookie(c, "PREF") || "sfc=1"
       const sq = new URLSearchParams(pref) 
       
       
@@ -78,16 +78,23 @@ export default function Page(pageId: string, fn?: (c: Context) => any) {
       const ac = c.req.header('Accept-Language') || "";
       const qhl = c.req.query("hl") || sq.get("hl")!
       
+      const sfc = (c.req.query("reload_sfc") === "1" ? c.req.query("sfc") : sq.get("sfc")) ?? "1"
+      
       application.client = props.client = {
         hl: (ac || qhl) ? resolveLanguage(ac, qhl) : "en",
         gl: c.req.header('x-vercel-ip-Country') || 'US',
+        sfc: sfc === "1",
         timeZone: c.req.header('x-vercel-ip-timezone') || 'UTC'
       }
       
       const isDev = process.env.is_dev === "1"
       
-      if (c.req.query("reload_lang") === "1") {
+      if (
+        c.req.query("reload_lang") === "1" ||
+        c.req.query("reload_sfc") === "1" 
+      ) {
         sq.set("hl",  props.client.hl)
+        sq.set("sfc",  sfc)
         headers["Set-Cookie"] = `PREF=${sq.toString()}; Max-Age=31536000`
       }
       
