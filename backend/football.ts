@@ -45,6 +45,8 @@ const COUNTRY_MAP: Record<string, string> = {
   it: "Italy",
 };
 
+let y: number | null = null, data$: Fixture[] = []
+
 interface GetFixturesOptions {
   country: string;
   query?: string | null;
@@ -57,7 +59,10 @@ export async function getFixtures({
   limit = 5,
 }: GetFixturesOptions): Promise<Fixture[]> {
   
-
+   if (y && data$ && (Date.now() - y < 5_000)) {
+     return data$
+   }
+   
   
 
   const params = new URLSearchParams({
@@ -82,6 +87,9 @@ export async function getFixtures({
     throw new Error(`API error: ${res.status}`);
   }
   const data = await res.json();
+  y = Date.now()
+  data$ = data as any
+  console.log(JSON.stringify(data, null, 2))
   const countryCode = country?.toUpperCase();
 
   return data.response

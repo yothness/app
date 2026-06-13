@@ -16,13 +16,15 @@ let services = [...topSevices]
 const mapType: [number, string][] = [
   [0x28ff21, "newness"]
 ]
+let i = 0
 
 export default async function Data(
   pageId: string,
   props: any,
-  countryHttp?: string
+  countryHttp?: string,
+  isPage?: boolean
 ) {
-  let data: any = {}, userData: string | null = null
+  let data: any = { _reqIndex: i++ }, userData: string | null = null
   
   const i18n: any = i18nData[props.client?.hl] || {}
   const qHl = `hl=${props.client?.hl}`
@@ -92,7 +94,7 @@ export default async function Data(
     }
     break;
   case "news_update":
-    const updateArticle = (await pool.query(`select * from updates`)).rows;
+    const updateArticle = (await pool.query(`select * from updates ORDER BY created_at DESC limit 12`)).rows;
     for (let i = 0; i < updateArticle.length; i ++) {
       const t = updateArticle[i]
       updateArticle[i] = {
@@ -107,13 +109,13 @@ export default async function Data(
       }
     }
     data["about"] = {
-      title: i18n["update.title"] || "News & Updates",
+      title: i18n["update.title"],
       updateArticle
     }
     break;
   case "families":
     data["about"] = {
-      title: i18n["families.title"] || "Help keep your family safer online",
+      title: i18n["families.title"],
       icon: "diversity_1"
     }
     break;
@@ -136,7 +138,8 @@ export default async function Data(
     }
     break;
   }
-
+  
+  
 
   return [
     pageId,
