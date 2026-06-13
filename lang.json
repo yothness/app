@@ -36,7 +36,21 @@
     "sport.status.CANC": "Cancelled",
     "sport.status.ABD": "Abandoned",
     "sport.status.AWD": "Awarded",
-    "sport.status.WO": "Walkover"
+    "sport.status.WO": "Walkover",
+    
+ "sport.options": "Football",
+  "sport.options.desc": "Show football matches, live scores, and results on the home page.",
+
+  "tap.account": "Account",
+  "tap.account.button": "Manage Account or Sign In",
+
+  "tap.preferences": "Preferences",
+
+  "tap.privacy": "Privacy",
+
+  "theme.device": "Use Device Theme",
+  "theme.label": "Theme",
+  "theme.select": "Choose a Theme"
   },
   "es": {
     "NAME": "Español",
@@ -74,7 +88,21 @@
     "sport.status.CANC": "Cancelado",
     "sport.status.ABD": "Suspendido",
     "sport.status.AWD": "Victoria por W.O.",
-    "sport.status.WO": "W.O."
+    "sport.status.WO": "W.O.",
+    
+        "sport.options": "Fútbol",
+    "sport.options.desc": "Mostrar partidos, marcadores en vivo y resultados de fútbol en la página principal.",
+
+    "tap.account": "Cuenta",
+    "tap.account.button": "Administrar Cuenta o Iniciar Sesión",
+
+    "tap.preferences": "Preferencias",
+
+    "tap.privacy": "Privacidad",
+
+    "theme.device": "Usar Tema del Dispositivo",
+    "theme.label": "Tema",
+    "theme.select": "Elegir un Tema"
   },
   "pt": {
     "NAME": "Português",
@@ -114,6 +142,20 @@
     "sport.status.CANC": "Cancelado",
     "sport.status.ABD": "Abandonado",
     "sport.status.AWD": "Vitória por W.O.",
-    "sport.status.WO": "W.O."
+    "sport.status.WO": "W.O.",
+    
+        "sport.options": "Futebol",
+    "sport.options.desc": "Exibir partidas, placares ao vivo e resultados de futebol na página inicial.",
+
+    "tap.account": "Conta",
+    "tap.account.button": "Gerenciar Conta ou Entrar",
+
+    "tap.preferences": "Preferências",
+
+    "tap.privacy": "Privacidade",
+
+    "theme.device": "Usar Tema do Dispositivo",
+    "theme.label": "Tema",
+    "theme.select": "Escolher um Tema"
   }
 }

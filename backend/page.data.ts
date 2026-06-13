@@ -69,22 +69,22 @@ export default async function Data(
     data = {
       page: {
         guide: [
-          ["Preferences", "#"],
-          ["Account", "#acc"],
-          ["Privacy", "#priv"],
+          [i18n["tap.preferences"], "#"],
+          [i18n["tap.account"], "#acc"],
+          [i18n["tap.privacy"], "#priv"],
         ],
         MAIN: [
           [0, i18n["_linguage"]],
           [2, i18n["_linguage.select"], keys, props.client?.hl, "?hl=$&reload_lang=1"],
-          [0, "Soccer / Football"],
-          [1, "Choose whether football matches and scores are displayed on the home page."],
-          [2, "Show", [["0", i18n["_off"]], ["1", i18n["_on"]]], String(+props.client?.sfc), "?sfc=$&reload_sfc=1&" + qHl],
-          [0, "Theme"],
-          [2, "Select Theme", [["-1", "Device theme"]], "-1", ["thm"]],
+          [0, i18n["sport.options"]],
+          [1, i18n["sport.options.desc"]],
+          [2, " ", [["0", i18n["_off"]], ["1", i18n["_on"]]], String(+props.client?.sfc), "?sfc=$&reload_sfc=1&" + qHl],
+          [0, i18n["theme.label"]],
+          [2, i18n["theme.select"], [["-1", i18n["theme.device"]]], "-1", ["thm"]],
         ],
         acc: [
-          [0, "Account"],
-          [3, "Manager or Signin Account", "/account?" +qHl],
+          [0, i18n["tap.account"]],
+          [3, i18n["tap.account.button"], "/account?" +qHl],
         ],
         priv: [
           [0, "Safe Family"],
