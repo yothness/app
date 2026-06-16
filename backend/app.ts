@@ -36,7 +36,7 @@ app.get('/_/v3/run', async (c) => {
     console.error(_)
     return c.redirect("/?err=1", 308)
   }
-  return c.html("?_?")
+  return c.html("?¿")
 })
 app.post('/_/v3/csq', async (c) => {
   let o: any = [], DI: any = null, D: any = {}
