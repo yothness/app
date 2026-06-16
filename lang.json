@@ -50,7 +50,13 @@
 
   "theme.device": "Use Device Theme",
   "theme.label": "Theme",
-  "theme.select": "Choose a Theme"
+  "theme.select": "Choose a Theme",
+  
+  "account.sg.birth": "Date of birth",
+  "account.sg.back": "Back",
+  "account.sg.rue": "Sign up with this email",
+  "account.sg.next": "Continue",
+  "account.sg.sign_in": "Sign In"
   },
   "es": {
     "NAME": "Español",
@@ -102,7 +108,17 @@
 
     "theme.device": "Usar Tema del Dispositivo",
     "theme.label": "Tema",
-    "theme.select": "Elegir un Tema"
+    "theme.select": "Elegir un Tema" ,
+    
+"account.sg.birth": "Fecha de nacimiento",
+
+"account.sg.back": "Atrás",
+
+"account.sg.rue": "Regístrate con este correo electrónico",
+
+"account.sg.next": "Continuar",
+
+"account.sg.sign_in": "Iniciar sesión"
   },
   "pt": {
     "NAME": "Português",
@@ -156,6 +172,13 @@
 
     "theme.device": "Usar Tema do Dispositivo",
     "theme.label": "Tema",
-    "theme.select": "Escolher um Tema"
+    "theme.select": "Escolher um Tema",
+    
+"account.sg.birth": "Data de nascimento",
+"account.sg.back": "Voltar",
+"account.sg.rue": "Cadastre-se com este e-mail",
+"account.sg.next": "Continuar",
+
+"account.sg.sign_in": "Entrar"
   }
 }

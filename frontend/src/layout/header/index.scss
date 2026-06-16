@@ -9,6 +9,7 @@
   align-items: center;
   padding: 0 16px;
   backdrop-filter: blur(64px);
+  
   .logo {
     font-size: 18px;
     font-weight: 600;
@@ -19,15 +20,20 @@
     justify-content: center;
   }
   .signin {
+    &:not(.l) { padding: 0 12px; }
     margin: 8px 0;
-    padding: 0 12px;
     border-radius: 98px;
     font-weight: 500;
     color: #221;
     background: #eef;
     height: 38px;
     align-items: center;
+    overflow: hidden;
     box-shadow: 0 0.4px 1.5px #12161B66;
+    img {
+      height: 38px;
+      width: 38px;
+    }
   }
   [role="listitem"] {
     padding: 16px 18px;

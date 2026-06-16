@@ -1,13 +1,15 @@
 // @ts-ignore
 import crypto from "crypto";
+
 import { Context } from 'hono'
 import { getCookie } from 'hono/cookie'
+import { Get$ } from './sign_in'
 import Data from './page.data'
 
 import M from '../lang.json'
 const i18nData = M as any;
 
-const version = "AAAAAAA82YYGD8N"
+const version = "AAA2AAAA5Y88NAF"
 
 const allowedCharsets = [
   "utf-8",
@@ -120,14 +122,24 @@ export default function Page(pageId: string, fn?: (c: Context) => any) {
       const nonce = crypto.randomBytes(16).toString("base64");
       const src = isDev ? `http://${url.hostname}:${8082}/app.js` : `/s/${version}/app.js`
       
-      const data = await Data(pageId, props, c.req.header('x-vercel-ip-country-region'))
+      const data = await Data(c, pageId, props, c.req.header('x-vercel-ip-country-region'), true)
+      
+      const JSID = "null"
       
       
+      
+
+     const i18n: any = i18nData[props.client.hl]
+      
+      const _H = await Get$(c)
+      
+      const is_logd = _H[1]?.length !== 0
+      const HTML_BUTTON_USER = `<a hidden class="endpoint${is_logd?" l ":" "}flex signin" menu-user href="${is_logd ? "/account" : "/serviceLogin?source=self"}">${is_logd ? `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1YM3dx3reFLZOUbvkGRZJ5PQDbMo76y6E52Y_aALrXA&s" alt="Profile Picture"/>` : i18n["account.sg.sign_in"]}</a>`;
       
       
       let HTML:any = `<!DOCTYPE html><html dir="ltr" ${isDark?"dark":""} lang="${LANG_HTML}"><head><title>Yothness</title>${
         (canonicalUrl ? `<link rel="canonical" href="${canonicalUrl}"/>`:"")
-      }<meta property="og:site_name" content="Yothness"/><meta property="og:image" content="data:,"/><meta property="og:image:width" content="0"/><meta property="og:image:height" content="0"/><script src="https://cdn.jsdelivr.net/npm/eruda" nonce="${nonce}"></script><script>eruda.init();</script><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="application-title" content="Yothness" /><script>var app=${JSON.stringify(application)};</script></head><body><script>var E=document.createElement("meta");E.name="referrer";E.content="origin-when-cross-origin";document.getElementsByTagName("head")[0].appendChild(E);E=null</script><script>var appData=${JSON.stringify(data)};</script><wf-app id="application"></wf-app><script src="${src}" ${!isDev?"":`crossorigin="anonymous" `}nonce="${nonce}"></script></body></html>`
+      }<meta property="og:site_name" content="Yothness"/><meta property="og:image" content="data:,"/><meta property="og:image:width" content="0"/><meta property="og:image:height" content="0"/><script src="/jsd/${JSID}.js" nonce="${nonce}"></script><script src="https://cdn.jsdelivr.net/npm/eruda" nonce="${nonce}"></script><script>eruda.init();</script><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="application-title" content="Yothness" /><script>var app=${JSON.stringify(application)};</script></head><body>${HTML_BUTTON_USER}<script>var E=document.createElement("meta");E.name="referrer";E.content="origin-when-cross-origin";document.getElementsByTagName("head")[0].appendChild(E);E=null</script><script>var appData=${JSON.stringify(data)};</script><wf-app id="application"></wf-app><script src="${src}" ${!isDev?"":`crossorigin="anonymous" `}nonce="${nonce}"></script></body></html>`
 
 
 

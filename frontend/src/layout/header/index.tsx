@@ -5,6 +5,7 @@ import {
   useEffect
 } from "react"
 
+const k = document.querySelector("[menu-user]");
 export default function Header({ page: id }: { page: string }) {
   const [data, setData] = useState<any>({
     
@@ -22,9 +23,8 @@ export default function Header({ page: id }: { page: string }) {
         <a role="listitem" className="endpoint" aria-selected={id === "news_update"} href="/news_update"><span className="text">News & Updates</span> <span className="msr-icon">news</span></a>
         <a role="listitem" className="endpoint" aria-selected={id === "about"} href="/about"><span className="text">About</span> <span className="msr-icon">info</span></a>
       </div>
-      <div className="flex">
+      <div className="flex" ref={a => { if (k) { a?.appendChild(k); k.removeAttribute("hidden") }  }}>
         <a role="listitem" className="endpoint" aria-selected={id === "preferences"} href="/preferences"><span className="text">Settings</span> <span className="msr-icon">settings</span></a>
-        <a className="endpoint flex signin" href="/serviceLogin?source=self">Login</a>
       </div>
     </div>
   )

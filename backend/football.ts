@@ -66,7 +66,7 @@ export async function getFixtures({
   
 
   const params = new URLSearchParams({
-    "live":'all'
+    //"live":'all'
   });
 
   if (query) {

@@ -1,5 +1,7 @@
+import { Context } from "hono"
 import pool from "./database"
 import { getFixtures } from "./football"
+import { Get$ } from "./sign_in"
 import M from '../lang.json'
 
 const i18nData = M as any;
@@ -19,6 +21,7 @@ const mapType: [number, string][] = [
 let i = 0
 
 export default async function Data(
+  c: Context,
   pageId: string,
   props: any,
   countryHttp?: string,
@@ -29,8 +32,82 @@ export default async function Data(
   const i18n: any = i18nData[props.client?.hl] || {}
   const qHl = `hl=${props.client?.hl}`
   
+  
+  
+  
+  
   switch (pageId) {
-  case "home":
+   case "sg":
+     
+     const id: number = props.u2 ? parseInt(props.u2 , 16) : 0;
+     let inp: any[][] = [], title = i18n["account.sg.sign_in"], description = "", D: any = {};
+     if (props.u2) {
+       try {
+         D = JSON.parse(new Buffer(props.p, "hex").toString("utf8"));
+       } catch {}
+     }
+     
+     if (id === 0) {
+       title = "Sign In/Up"
+       inp = [
+         [0, "Email", D.auto?.email, {}, "em", "email"],
+      ]
+      description = "You can Sign In and Create an account here."
+   } else if (id === 0xf) {
+       title = "Create an Account" 
+       description = "Create an account!"
+       inp = [
+          [0, "Name", null, { minLength: 128 }, "n", "text"],
+          [0, "Email", D.auto?.email, {}, "em", "email"],
+          [0, i18n["account.sg.birth"], null, {}, "bn", "date"],
+          [
+            1,
+            "Gender",
+            -1,
+            [
+              [0, "Male"],
+              [1, "Female"],
+              [2, "Non-binary"],
+              [-1, "Prefer not to say"]
+            ],
+            "gn"
+          ],
+          [0, "Create Password", null, {}, "pwd", "password"]
+       ];
+     } else if (id === 4) {
+       description = `Login with ${D.user?.[0]?.name || "-"} (${D.auto?.email || "-"})`
+       inp = [
+          [0, "Email", D.auto?.email, { hidden: true }, "em", "email"],
+         [0, "Password", null, {}, "pwd", "password"],
+       ]
+     } else if (id === 3) {
+       inp = []
+       description = ``
+     } else if (id === 0xf1) {
+       title = "Create an Account"
+       description = `By creating an account, you agree to our Terms of Service and Privacy Policy. You are responsible for maintaining the security of your account and for all activities that occur under it. We reserve the right to suspend or terminate accounts that violate our policies.`
+     } else if (id === 0x12) {
+       title = `Welcome back!`
+       description = ``
+     }
+     
+     data._ = [
+       title,
+       description,
+       {},
+       inp,
+       id === 0 ? null : [i18n["account.sg.back"]],
+      ]
+      
+      if (id === 4) {
+        data._.push([i18n["account.sg.rue"], null, 0xf],[i18n["account.sg.next"], true])
+      } else {
+        data._.push([id === 0x12 ? i18n["account.sg.sign_in"] : (id === 0xf1 ? "Create Account" : i18n["account.sg.next"]) , true])
+      }
+      
+     
+     break;
+   case "home":
     if (props.client?.sfc) {
     const t = await getFixtures({
       limit: 3,
@@ -66,32 +143,31 @@ export default async function Data(
     for (let i = 0; i < keys.length; i++) {
       keys[i] = [keys[i], i18nData[keys[i]].NAME]
     }
-    data = {
-      page: {
-        guide: [
-          [i18n["tap.preferences"], "#"],
-          [i18n["tap.account"], "#acc"],
-          [i18n["tap.privacy"], "#priv"],
-        ],
-        MAIN: [
-          [0, i18n["_linguage"]],
-          [2, i18n["_linguage.select"], keys, props.client?.hl, "?hl=$&reload_lang=1"],
-          [0, i18n["sport.options"]],
-          [1, i18n["sport.options.desc"]],
-          [2, " ", [["0", i18n["_off"]], ["1", i18n["_on"]]], String(+props.client?.sfc), "?sfc=$&reload_sfc=1&" + qHl],
-          [0, i18n["theme.label"]],
-          [2, i18n["theme.select"], [["-1", i18n["theme.device"]]], "-1", ["thm"]],
-        ],
-        acc: [
-          [0, i18n["tap.account"]],
-          [3, i18n["tap.account.button"], "/account?" +qHl],
-        ],
-        priv: [
-          [0, "Safe Family"],
-          [3, "Family Link", "/families?" +qHl ],
-        ],
-      }
+    data.page = {
+      guide: [
+        [i18n["tap.preferences"], "#"],
+        [i18n["tap.account"], "#acc"],
+        [i18n["tap.privacy"], "#priv"],
+      ],
+      MAIN: [
+        [0, i18n["_linguage"]],
+        [2, i18n["_linguage.select"], keys, props.client?.hl, "?hl=$&reload_lang=1"],
+        [0, i18n["sport.options"]],
+        [1, i18n["sport.options.desc"]],
+        [2, " ", [["0", i18n["_off"]], ["1", i18n["_on"]]], String(+props.client?.sfc), "?sfc=$&reload_sfc=1&" + qHl],
+        [0, i18n["theme.label"]],
+        [2, i18n["theme.select"], [["-1", i18n["theme.device"]]], "-1", ["thm"]],
+      ],
+      acc: [
+        [0, i18n["tap.account"]],
+        [3, i18n["tap.account.button"], "/account?" +qHl],
+      ],
+      priv: [
+        [0, "Safe Family"],
+        [3, "Family Link", "/families?" +qHl ],
+      ],
     }
+    
     break;
   case "news_update":
     const updateArticle = (await pool.query(`select * from updates ORDER BY created_at DESC limit 12`)).rows;

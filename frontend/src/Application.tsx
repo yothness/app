@@ -2,12 +2,23 @@ import Header from "./layout/header";
 import Football from "./layout/football";
 import PreferencesScreen from "./preferences";
 import "./Application.scss"
-import {
+import React, {
   useState,
   useEffect,
   useRef,
+  Suspense,
   useCallback
 } from "react"
+import SG from "./sign-in"
+/*
+const SG = React.lazy(() =>
+        import(
+          /* webpackChunkName: "SGAA" * /
+          "./sign-in/index"
+        )
+      );*/
+
+
 
 export default function App({
   application_, root_
@@ -18,11 +29,13 @@ export default function App({
   const [data,
     setData] = useState < [string,
     any] > ((window as any).appData || ["home", {}])
-  useEffect(() => {}, [])
+  useEffect(() => {
+    root_.setAttribute("page-id", data[0])
+  }, [data])
 
   return (
     <>
-      <Header page={data[0]} />
+      {data[0] !== "sg" && <Header page={data[0]} />}
       <Get page={data[0]} data={data[1]} />
     </>
   )
@@ -34,7 +47,15 @@ export default function App({
   }: {
     data: any, page: string
   }) {
+    
     if (page === "preferences") return <PreferencesScreen data={data} />;
+    if (page === "sg") {
+      
+      
+      return <Suspense fallback={<span />}>
+        <SG data={data} />
+      </Suspense>
+    } 
     const { about, sports } = data
     if (about) {
       return <>
