@@ -9,7 +9,7 @@ import Data from './page.data'
 import M from '../lang.json'
 const i18nData = M as any;
 
-const version = "AAA2AAAA5Y88NAF"
+const version = "AAA2AAAA5Y88NAI"
 
 const allowedCharsets = [
   "utf-8",
@@ -124,7 +124,7 @@ export default function Page(pageId: string, fn?: (c: Context) => any) {
       
       const data = await Data(c, pageId, props, c.req.header('x-vercel-ip-country-region'), true)
       
-      const JSID = "null"
+      const JSID = `AA.${LANG_HTML}.EE`
       
       
       
@@ -135,11 +135,11 @@ export default function Page(pageId: string, fn?: (c: Context) => any) {
       
       const is_logd = _H[1]?.length !== 0
       const HTML_BUTTON_USER = `<a hidden class="endpoint${is_logd?" l ":" "}flex signin" menu-user href="${is_logd ? "/account" : "/serviceLogin?source=self"}">${is_logd ? `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1YM3dx3reFLZOUbvkGRZJ5PQDbMo76y6E52Y_aALrXA&s" alt="Profile Picture"/>` : i18n["account.sg.sign_in"]}</a>`;
-      
-      
-      let HTML:any = `<!DOCTYPE html><html dir="ltr" ${isDark?"dark":""} lang="${LANG_HTML}"><head><title>Yothness</title>${
+      const LOGO = `<img src="/s/_/img.static/events/AAAAA01.gif" alt="Would Cup | Yothness" class="enent"/>`
+      const LOGO_URL = `/?pp=wc&evt=1`
+      let HTML:any = `<!DOCTYPE html><html dir="ltr" ${isDark?"dark":""} lang="${LANG_HTML}"><head><meta name="viewport" content="width=device-width, initial-scale=1.0${!isDasktop ? ", maximum-scale=1.0, user-scalable=no":""}"><title>Yothness</title>${
         (canonicalUrl ? `<link rel="canonical" href="${canonicalUrl}"/>`:"")
-      }<meta property="og:site_name" content="Yothness"/><meta property="og:image" content="data:,"/><meta property="og:image:width" content="0"/><meta property="og:image:height" content="0"/><script src="/jsd/${JSID}.js" nonce="${nonce}"></script><script src="https://cdn.jsdelivr.net/npm/eruda" nonce="${nonce}"></script><script>eruda.init();</script><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="application-title" content="Yothness" /><script>var app=${JSON.stringify(application)};</script></head><body>${HTML_BUTTON_USER}<script>var E=document.createElement("meta");E.name="referrer";E.content="origin-when-cross-origin";document.getElementsByTagName("head")[0].appendChild(E);E=null</script><script>var appData=${JSON.stringify(data)};</script><wf-app id="application"></wf-app><script src="${src}" ${!isDev?"":`crossorigin="anonymous" `}nonce="${nonce}"></script></body></html>`
+      }<meta property="og:site_name" content="Yothness"/><meta property="og:image" content="data:,"/><meta property="og:image:width" content="0"/><meta property="og:image:height" content="0"/><script src="/jsd/${JSID}.js" nonce="${nonce}"></script><script src="https://cdn.jsdelivr.net/npm/eruda" nonce="${nonce}"></script><script>eruda.init();</script><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="application-title" content="Yothness" /><script>var app=${JSON.stringify(application)};</script></head><body><a hidden class="logo endpoint" href="${LOGO_URL}" logo-app id="logo">${LOGO}</a>${HTML_BUTTON_USER}<script>var E=document.createElement("meta");E.name="referrer";E.content="origin-when-cross-origin";document.getElementsByTagName("head")[0].appendChild(E);E=null</script><script>var appData=${JSON.stringify(data)};</script><wf-app id="application"></wf-app><script src="${src}" ${!isDev?"":`crossorigin="anonymous" `}nonce="${nonce}"></script></body></html>`
 
 
 

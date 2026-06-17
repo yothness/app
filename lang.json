@@ -2,26 +2,26 @@
   "en": {
     "NAME": "English",
     "LANG": "en-US",
-    
+
     "apps.all_service": "Discover all of Yothness's services!",
     "apps.title": "Apps & Services",
-    
+
     "about.title": "Yothness, Make Your Dreams Come True",
     "about.some_apps": "Discover some of Yothness's services!",
-    
+
     "update.title": "News & Updates",
     "update.status.newness": "Newness",
-    
+
     "families.title": "Help keep your family safer online",
-    
+
     "_linguage": "Linguage",
     "_linguage.select": "Select a language",
-    
+
     "_off": "Off",
     "_on": "On",
-    
-    
-        "sport.status.NS": "Not Started",
+
+
+    "sport.status.NS": "Not Started",
     "sport.status.1H": "First Half",
     "sport.status.HT": "Half Time",
     "sport.status.2H": "Second Half",
@@ -37,49 +37,49 @@
     "sport.status.ABD": "Abandoned",
     "sport.status.AWD": "Awarded",
     "sport.status.WO": "Walkover",
-    
- "sport.options": "Football",
-  "sport.options.desc": "Show football matches, live scores, and results on the home page.",
 
-  "tap.account": "Account",
-  "tap.account.button": "Manage Account or Sign In",
+    "sport.options": "Football",
+    "sport.options.desc": "Show football matches, live scores, and results on the home page.",
 
-  "tap.preferences": "Preferences",
+    "tap.account": "Account",
+    "tap.account.button": "Manage Account or Sign In",
 
-  "tap.privacy": "Privacy",
+    "tap.preferences": "Preferences",
 
-  "theme.device": "Use Device Theme",
-  "theme.label": "Theme",
-  "theme.select": "Choose a Theme",
-  
-  "account.sg.birth": "Date of birth",
-  "account.sg.back": "Back",
-  "account.sg.rue": "Sign up with this email",
-  "account.sg.next": "Continue",
-  "account.sg.sign_in": "Sign In"
+    "tap.privacy": "Privacy",
+
+    "theme.device": "Use Device Theme",
+    "theme.label": "Theme",
+    "theme.select": "Choose a Theme",
+
+    "account.sg.birth": "Date of birth",
+    "account.sg.back": "Back",
+    "account.sg.rue": "Sign up with this email",
+    "account.sg.next": "Continue",
+    "account.sg.sign_in": "Sign In"
   },
   "es": {
     "NAME": "Español",
     "LANG": "es-ES",
-    
+
     "apps.all_service": "¡Descubre todos los servicios de Yothness!",
     "apps.title": "Aplicaciones & servicios",
-    
+
     "about.title": "Yothness, Haz realidad tus sueños",
     "about.some_apps": "¡Descubre algunos de los servicios de Yothness!",
-    
+
     "update.title": "Novedades & actualizaciones",
     "update.status.newness": "Novedad",
-    
+
     "families.title": "Ayuda a mantener a tu familia más segura en línea",
-    
+
     "_linguage": "Idioma",
     "_linguage.select": "Seleccione un idioma",
-    
+
     "_off": "Desactivado",
     "_on": "Activado",
-    
-        "sport.status.NS": "No Iniciado",
+
+    "sport.status.NS": "No Iniciado",
     "sport.status.1H": "Primer Tiempo",
     "sport.status.HT": "Descanso",
     "sport.status.2H": "Segundo Tiempo",
@@ -95,8 +95,8 @@
     "sport.status.ABD": "Suspendido",
     "sport.status.AWD": "Victoria por W.O.",
     "sport.status.WO": "W.O.",
-    
-        "sport.options": "Fútbol",
+
+    "sport.options": "Fútbol",
     "sport.options.desc": "Mostrar partidos, marcadores en vivo y resultados de fútbol en la página principal.",
 
     "tap.account": "Cuenta",
@@ -108,41 +108,41 @@
 
     "theme.device": "Usar Tema del Dispositivo",
     "theme.label": "Tema",
-    "theme.select": "Elegir un Tema" ,
-    
-"account.sg.birth": "Fecha de nacimiento",
+    "theme.select": "Elegir un Tema",
 
-"account.sg.back": "Atrás",
+    "account.sg.birth": "Fecha de nacimiento",
 
-"account.sg.rue": "Regístrate con este correo electrónico",
+    "account.sg.back": "Atrás",
 
-"account.sg.next": "Continuar",
+    "account.sg.rue": "Regístrate con este correo electrónico",
 
-"account.sg.sign_in": "Iniciar sesión"
+    "account.sg.next": "Continuar",
+
+    "account.sg.sign_in": "Iniciar sesión"
   },
   "pt": {
     "NAME": "Português",
     "LANG": "pt-BR",
-    
+
     "apps.all_service": "Descubra todos os serviços da Yothness!",
     "apps.title": "Aplicativos e Serviços",
-    
+
     "about.title": "Yothness, Realize Seus Sonhos",
     "about.some_apps": "Descubra alguns dos serviços da Yothness!",
-    
-    
+
+
     "update.title": "Notícias e Atualizações",
     "update.status.newness": "Novidades",
-    
-    
+
+
     "families.title": "Ajude a manter sua família mais segura online",
-    
+
     "_linguage": "Idioma",
     "_linguage.select": "Selecione um idioma",
-    
+
     "_off": "Desativado",
     "_on": "Ativado",
-    
+
     "sport.status.NS": "Não Iniciado",
     "sport.status.1H": "Primeiro Tempo",
     "sport.status.HT": "Intervalo",
@@ -159,8 +159,8 @@
     "sport.status.ABD": "Abandonado",
     "sport.status.AWD": "Vitória por W.O.",
     "sport.status.WO": "W.O.",
-    
-        "sport.options": "Futebol",
+
+    "sport.options": "Futebol",
     "sport.options.desc": "Exibir partidas, placares ao vivo e resultados de futebol na página inicial.",
 
     "tap.account": "Conta",
@@ -173,12 +173,12 @@
     "theme.device": "Usar Tema do Dispositivo",
     "theme.label": "Tema",
     "theme.select": "Escolher um Tema",
-    
-"account.sg.birth": "Data de nascimento",
-"account.sg.back": "Voltar",
-"account.sg.rue": "Cadastre-se com este e-mail",
-"account.sg.next": "Continuar",
 
-"account.sg.sign_in": "Entrar"
+    "account.sg.birth": "Data de nascimento",
+    "account.sg.back": "Voltar",
+    "account.sg.rue": "Cadastre-se com este e-mail",
+    "account.sg.next": "Continuar",
+
+    "account.sg.sign_in": "Entrar"
   }
 }

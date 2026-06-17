@@ -1,4 +1,4 @@
-export interface Fixture { // type errado
+export interface Fixture {
   fixture: {
     id: number;
     date: string;
@@ -66,7 +66,7 @@ export async function getFixtures({
   
 
   const params = new URLSearchParams({
-    //"live":'all'
+    "live":'all'
   });
 
   if (query) {

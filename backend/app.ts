@@ -140,6 +140,9 @@ app.post('/_/v3/csq', async (c) => {
 
 app.get('/', Page("home"))
 app.get('/about', Page("about"))
+app.get('/account', Page("account"))
+app.get('/account/security', Page("security_account"))
+app.get('/account/change/:type', Page("change_account"))
 app.get('/news_update', Page("news_update"))
 app.get('/preferences', Page("preferences"))
 app.get('/families', Page("families"))

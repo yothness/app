@@ -34,43 +34,7 @@
         }
       }
     }
-    select, input {
-      background: #0000;
-      outline: none;
-      display: block;
-      height: 48px;
-      width: 100%;
-      border: 1px solid #fff8;
-      box-sizing: border-box;
-      padding: 0 16px;
-      color: inherit;
-      border-radius: 8px;
-      font-size: 12px;
-      &:not(:valid):not(:empty) {
-        border: 1px solid red;
-      }
-      &:not(:empty),
-      &:valid,
-      &:focus  {
-       ~ label {
-          transform: translate(-6px, -24px);
-          color: #fff;
-        }
-      }
-    }
-    label {
-      pointer-events: none;
-      position: absolute;
-      font-size: 12px;
-      top: 18px;
-      left: 10px;
-      background: #111112;
-      padding: 0 6px;
-      color: #888;
-      transition: 
-      color 300ms,
-      transform 300ms;
-    }
+    
     h1 {
       margin: 1em 0!important;
     }
@@ -127,10 +91,47 @@
     }
   }
   &aad {
+  
     margin-top: 8px;
     position: relative;
     height: 48px;
-
+select, input {
+      background: #0000;
+      outline: none;
+      display: block;
+      height: 48px;
+      width: 100%;
+      border: 1px solid #fff8;
+      box-sizing: border-box;
+      padding: 0 16px;
+      color: inherit;
+      border-radius: 8px;
+      font-size: 12px;
+      &:not(:valid):not(:empty) {
+        border: 1px solid red;
+      }
+      &:not(:empty),
+      &:valid,
+      &:focus  {
+       ~ label {
+          transform: translate(-6px, -24px);
+          color: #fff;
+        }
+      }
+    }
+    label {
+      pointer-events: none;
+      position: absolute;
+      font-size: 12px;
+      top: 18px;
+      left: 10px;
+      background: #111112;
+      padding: 0 6px;
+      color: #888;
+      transition: 
+      color 300ms,
+      transform 300ms;
+    }
     span {
       display: block;
       font-size: 12px;

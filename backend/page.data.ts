@@ -1,6 +1,7 @@
 import { Context } from "hono"
 import pool from "./database"
 import { getFixtures } from "./football"
+
 import { Get$ } from "./sign_in"
 import M from '../lang.json'
 
@@ -18,6 +19,8 @@ let services = [...topSevices]
 const mapType: [number, string][] = [
   [0x28ff21, "newness"]
 ]
+
+
 let i = 0
 
 export default async function Data(
@@ -32,7 +35,101 @@ export default async function Data(
   const i18n: any = i18nData[props.client?.hl] || {}
   const qHl = `hl=${props.client?.hl}`
   
+  const { u } = c.req.query()
+  const { type } = c.req.param()
   
+  if (
+    pageId === "account" ||
+    pageId === "change_account" ||
+    pageId === "security_account"
+  ) {
+    let [i, Ac] = await Get$(c);
+    if (u) {
+      const j = Number(u);
+      i = isNaN(j) ? i : j
+    }
+    i = Ac.length - 1 < i ? Ac.length - 1 : Math.max(0, i); 
+    const k = Ac[i];
+    const userData = k ? (await pool.query(`
+      with logg as (
+        select
+          u.name,
+          u.email,
+          u.born,
+          s.cookie
+        from acc.session s
+        left join acc.users u on u.id = s.user_id
+        where s.cookie = ANY($2::text[])
+      )
+      select
+        name,
+        email,
+        born
+      from logg
+      where cookie = $1
+      `, [k, Ac])).rows[0] : null;
+    if (userData) {
+      const qInfo = `?u=${i}`
+      console.log(userData)
+      data.actions = pageId === "account" ?  [
+        ["person", "Name", userData.name, 0x4285F4, "/account/change/name" + qInfo],
+        ["mail", "Email", userData.email, 0x1EA5E9, "/account/change/email" + qInfo],
+        ["calendar_month", "Birthday", userData.born ? userData.born.toLocaleDateString(props.client?.hl || "en-US") : "Not set", 0xEC4899, "/account/change/birthday" + qInfo],
+        null,
+        ["fingerprint", "Password", "••••••••", 0x8B5CF6, "/account/change/pwd" + qInfo],
+        ["lock", "Security", "Manager, delete or etc your account", 0x9E5116, "/account/security" + qInfo],
+        null,
+        ["home", "Home location", "No location", 0xF59E0B, "/account/change/homelocal" + qInfo],
+        ["public", "Country", "Not set", 0x10B981, "/account/change/country" + qInfo],
+        null,
+        ["family_restroom", "Family Link", "No links", 0x22C55E, "/families" + qInfo],
+        ["devices", "Devices", "Manage devices", 0x64748B, "/account/devices" + qInfo]
+      ] : (
+        pageId === "security_account" ? [
+          ["graph_2", "Connections", "No connections", 0x18B92E, "/account/connections" + qInfo],
+          null,
+          ['delete', "Delete account", "Delete your account permanent", 0xd71717, "/account/request_delete" + qInfo]
+        ]: null
+      )
+      if (pageId === "change_account") {
+        let entries: any[] = null!, title = ""
+        switch (type) {
+           case "name":
+             title = "Change Your Name"
+             entries = [
+               [0, "Name", userData.name, "text", "n"]
+             ]
+             break
+           case "email":
+             title = "Change Your email"
+             entries = [
+               [0, "Email", userData.email, "email", "em"]
+             ]
+             break
+           case "birthday":
+             title = "Birthday"
+             entries = [
+               [0, "Birthday", userData.born, "date", "bn"]
+             ]
+             break
+           case "pwd":
+             title = "Change Your password"
+             entries = [
+               [0, "Password", '', "password", "pwd"],
+               [0, "Confirm Password", '', "password", "pwd"]
+             ]
+             break
+        }
+  
+        data.form = [
+          title,
+          entries
+        ]
+      }
+    } else {
+      return [null, "/serviceLogin?seurce=self"]
+    }
+  }
   
   
   
@@ -78,7 +175,7 @@ export default async function Data(
        description = `Login with ${D.user?.[0]?.name || "-"} (${D.auto?.email || "-"})`
        inp = [
           [0, "Email", D.auto?.email, { hidden: true }, "em", "email"],
-         [0, "Password", null, {}, "pwd", "password"],
+          [0, "Password", null, {}, "pwd", "password"],
        ]
      } else if (id === 3) {
        inp = []
@@ -108,6 +205,7 @@ export default async function Data(
      
      break;
    case "home":
+     
     if (props.client?.sfc) {
     const t = await getFixtures({
       limit: 3,
@@ -115,7 +213,8 @@ export default async function Data(
     })
     
     data.sports = {
-      list: t.map((q) => ({
+      title: "----",
+      list: t?.map((q) => ({
         top: q.league ? {
           name: q.league.name + " (" + q.league.country + ")",
           image: q.league.logo,

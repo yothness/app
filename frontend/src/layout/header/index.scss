@@ -13,6 +13,10 @@
   .logo {
     font-size: 18px;
     font-weight: 600;
+    img {
+      height: 85%;
+      border-radius: 8px;
+    }
   }
   .center {
     display: flex;
