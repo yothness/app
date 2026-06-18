@@ -14,8 +14,12 @@
     font-size: 18px;
     font-weight: 600;
     img {
-      height: 85%;
       border-radius: 8px;
+      height: 56px;
+      transition: filter 200ms;
+      &:hover {
+        filter: invert(10%) contrast(2);
+      }
     }
   }
   .center {
