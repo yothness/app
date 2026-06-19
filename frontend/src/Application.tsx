@@ -11,13 +11,7 @@ import React, {
 } from "react"
 
 
-const SG = React.lazy(() =>
-        import(
-          /* webpackChunkName: "SGAA" */
-          "./sign-in/index"
-        )
-      );
-
+import SG from  "./sign-in/index"
 
 
 export default function App({
@@ -48,7 +42,7 @@ export default function App({
     data: any, page: string
   }) {
 
-    if (page === "preferences") return <PreferencesScreen data={data} />;
+    if (page === "preferences" || data.preferences) return <PreferencesScreen data={data.preferences? ({ page: data.preferences }) : data} />;
     if (page === "sg") {
 
 
@@ -79,7 +73,7 @@ export default function App({
             </a>
             ))}
           {about.buttons?.map((a: any, index: number) => (
-            <button>{a.text}</button>
+            <button className={"action-button " + (a.href ? "endpoint" : "handle")} key={index} onClick={() => { document.location.href = a.href }} data-href={a.href} role={a.href ? "link": "button"}>{a.title}</button>
           ))}
 
 
@@ -203,7 +197,7 @@ onFocus={fsi}
 onInput={fsi}
 />
 <button type="submit" className="msr-icon">search</button>
-</div>
+</div>https://www.google.com/search?safe=active&sa=X&sca_esv=808a72af6f9e2127&hl=en&gl=BR&q=Brazil+national+football+team&stick=H4sIAAAAAAAAAONgFuLQz9U3MDYoNFfiBLEMjU2N4rVUspOt9IsL8otKiqFUfGJxcX5yZmJJZn5esVVJamJu8SJWWaeixKrMHIU8sHBijkJafn5JUmJOjgJIwQ5WRgDkoK15YAAAAA&ved=2ahUKEwjLmaeExY-VAxX6ppUCHWE2M10QxA16BAgzEAM&biw=606&bih=723&dpr=1.78
 {(data?.[1]?.length && isFocused && <div className="box">
 {data[1].map((a: string) => (
 <span className="d70" onClick={() => {

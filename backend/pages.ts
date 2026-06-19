@@ -9,7 +9,7 @@ import Data from './page.data'
 import M from '../lang.json'
 const i18nData = M as any;
 
-const version = "AAA2AAAA5Y88NAI"
+const version = "AAAAAAAA5Y98NF0"
 
 const allowedCharsets = [
   "utf-8",
@@ -112,6 +112,7 @@ export default function Page(pageId: string, fn?: (c: Context) => any) {
         return c.redirect(url.toString())
       }
       
+      const fullUrl = url.toString()
       
       url.search = ""
       const canonicalUrl = url.toString()
@@ -123,6 +124,7 @@ export default function Page(pageId: string, fn?: (c: Context) => any) {
       const src = isDev ? `http://${url.hostname}:${8082}/app.js` : `/s/${version}/app.js`
       
       const data = await Data(c, pageId, props, c.req.header('x-vercel-ip-country-region'), true)
+      if (data[0] === null && typeof data[1] === "string") return c.redirect(data[1])
       
       const JSID = `AA.${LANG_HTML}.EE`
       
@@ -136,7 +138,7 @@ export default function Page(pageId: string, fn?: (c: Context) => any) {
       const is_logd = _H[1]?.length !== 0
       const HTML_BUTTON_USER = `<a hidden class="endpoint${is_logd?" l ":" "}flex signin" menu-user href="${is_logd ? "/account" : "/serviceLogin?source=self"}">${is_logd ? `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1YM3dx3reFLZOUbvkGRZJ5PQDbMo76y6E52Y_aALrXA&s" alt="Profile Picture"/>` : i18n["account.sg.sign_in"]}</a>`;
       const LOGO = `<img src="https://yothness.vercel.app/s/_/img.static/events/AAAAA00.gif" alt="World Cup 2026 | Yothness" class="enent"/>`
-      const LOGO_URL = `https://google.com/search?q=World+Cup+2026&hl=${props.client?.hl}&gl=${props.client?.gl}&safe=active`
+      const LOGO_URL = `https://google.com/search?q=World+Cup+2026&hl=${props.client?.hl}&gl=${props.client?.gl}&safe=active&referrer=${encodeURIComponent(fullUrl)}`
       let HTML:any = `<!DOCTYPE html><html dir="ltr" ${isDark?"dark":""} lang="${LANG_HTML}"><head><meta name="viewport" content="width=device-width, initial-scale=1.0${!isDasktop ? ", maximum-scale=1.0, user-scalable=no":""}"><title>Yothness</title>${
         (canonicalUrl ? `<link rel="canonical" href="${canonicalUrl}"/>`:"")
       }<meta property="og:site_name" content="Yothness"/><meta property="og:image" content="data:,"/><meta property="og:image:width" content="0"/><meta property="og:image:height" content="0"/><script src="/jsd/${JSID}.js" nonce="${nonce}"></script><script src="https://cdn.jsdelivr.net/npm/eruda" nonce="${nonce}"></script><script>eruda.init();</script><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="application-title" content="Yothness" /><script>var app=${JSON.stringify(application)};</script></head><body><a hidden class="logo endpoint" href="${LOGO_URL}" logo-app id="logo">${LOGO}</a>${HTML_BUTTON_USER}<script>var E=document.createElement("meta");E.name="referrer";E.content="origin-when-cross-origin";document.getElementsByTagName("head")[0].appendChild(E);E=null</script><script>var appData=${JSON.stringify(data)};</script><wf-app id="application"></wf-app><script src="${src}" ${!isDev?"":`crossorigin="anonymous" `}nonce="${nonce}"></script></body></html>`

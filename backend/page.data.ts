@@ -41,6 +41,7 @@ export default async function Data(
   if (
     pageId === "account" ||
     pageId === "change_account" ||
+    pageId === "families_account" ||
     pageId === "security_account"
   ) {
     let [i, Ac] = await Get$(c);
@@ -126,8 +127,21 @@ export default async function Data(
           entries
         ]
       }
+      if (pageId === "families_account") {
+        data.preferences = {
+          _extends: {
+            next: ["Link a account", "add", ";openLinkedAccount:family"]
+          },
+          guide: [
+            ["All account", "#", "recent_actors"],
+            ["Your children's online account", "#children", "child_care"]
+          ],
+          MAIN: [[0, "No account linked"]],
+          children: [[0, "No account linked"]],
+        }
+      }
     } else {
-      return [null, "/serviceLogin?seurce=self"]
+      return [null, "/serviceLogin?seurce=self&next=" + encodeURIComponent(c.req.method === "POST" ? "/" : c.req.url)]
     }
   }
   
@@ -244,9 +258,9 @@ export default async function Data(
     }
     data.page = {
       guide: [
-        [i18n["tap.preferences"], "#"],
-        [i18n["tap.account"], "#acc"],
-        [i18n["tap.privacy"], "#priv"],
+        [i18n["tap.preferences"], "#", "settings"],
+        [i18n["tap.account"], "#acc", "person"],
+        [i18n["tap.privacy"], "#priv", "lock"],
       ],
       MAIN: [
         [0, i18n["_linguage"]],
@@ -291,7 +305,11 @@ export default async function Data(
   case "families":
     data["about"] = {
       title: i18n["families.title"],
-      icon: "diversity_1"
+      icon: "diversity_1",
+      buttons: [{
+        title: "Get starting",
+        href: "/account/families"
+      }]
     }
     break;
   case "apps_services":

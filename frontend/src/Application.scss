@@ -46,15 +46,20 @@ body {
   text-decoration: none;
   color: inherit;
 }
-
+body {
+  overflow-x: hidden;
+}
 #application {
+  box-sizing: border-box;
   margin: 0 auto;
   min-height: 100vh;
   min-height: 100dvh;
   max-width: 1280px;
+  
   display: flex;
   flex-direction: column;
   margin-top: 56px;
+  
   &[page-id="change_account"] {
     max-width: min(80vw, 400px);
   }
@@ -63,11 +68,15 @@ body {
     margin-bottom: 0;
     margin-top: 18vh;
     margin-bottom: 16vh;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 38px;
+    
+    width: 80vw;
     align-items: center;
     display: flex;
     span {
-      font-size: 16vw;
+      font-size: 24px;
       opacity: .4;
       margin: auto;
     }
@@ -211,6 +220,15 @@ body.read-mode:before {
   height: 100vh;
 }
 
+@media (prefers-contrast: more) {
+  body {
+    background: #000;
+    color: #fff;
+  }
+  .service {
+  &,&:after{  background: #000;}
+  }
+}
 
 
 .update-card {
@@ -296,4 +314,20 @@ body.read-mode:before {
     left: 0;
     content: "";
   }
+}
+
+.action-button {
+  padding: 12px 24px;
+  font: inherit;
+  font-size: 14px;
+  color: #110;
+  border-radius: 56px;
+  background: #eef;
+  margin: 0 auto;
+  border: none;
+  font-weight: 500;
+}
+button {
+  cursor: pointer;
+  user-select: none;
 }

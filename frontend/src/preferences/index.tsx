@@ -22,9 +22,10 @@ export default function PreferencesScreen({ data }: { data: any }) {
   return (
     <div className="flex pref-page">
       <div className="flex pref-guide">
-        {data.page?.guide?.map((data: any, index: any) => <a className="endpoint flex" aria-selected={data[1] === "#" + type} href={data[1]} key={index}>{data[0]}</a>)}
+        {data.page?.guide?.map((data: any, index: any) => <a className="endpoint flex" aria-selected={data[1] === "#" + type} href={data[1]} key={index}><span className="msr-icon">{data[2]}</span>{data[0]}</a>)}
       </div>
       <div role="main">
+        {data.page._extends && <div className="flex"><div style={{flex:1}}/>{data.page._extends.next && <button className="action-button" onClick={() => {}}>{data.page._extends.next[0]}</button>}</div>  }
         {page.map(([i, x0, x1, x2, x3]: any, index: number) => {
          if (i === 0) return <h3 key={index+"h"}>{x0}</h3>
          if (i === 1) return <p key={index+"p"}>{x0}</p>
@@ -42,7 +43,9 @@ export default function PreferencesScreen({ data }: { data: any }) {
               {x1.map(([k, v]: any) => (<option key={k} value={k}>{v}</option>))}
             </select>
           )
-        
+         if (i === 4) return (
+            <></>
+         )
         })}
       </div>
     </div>
