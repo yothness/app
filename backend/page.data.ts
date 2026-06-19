@@ -277,7 +277,7 @@ export default async function Data(
       ],
       priv: [
         [0, "Safe Family"],
-        [3, "Family Link", "/families?" +qHl ],
+        [3, "Family Link", "/account/families?" +qHl ],
       ],
     }
     
