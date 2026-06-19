@@ -73,18 +73,18 @@ export default async function Data(
       const qInfo = `?u=${i}`
       console.log(userData)
       data.actions = pageId === "account" ?  [
-        ["person", "Name", userData.name, 0x4285F4, "/account/change/name" + qInfo],
-        ["mail", "Email", userData.email, 0x1EA5E9, "/account/change/email" + qInfo],
-        ["calendar_month", "Birthday", userData.born ? userData.born.toLocaleDateString(props.client?.hl || "en-US") : "Not set", 0xEC4899, "/account/change/birthday" + qInfo],
+        ["person", "Name", userData.name, 0x3B82F6, "/account/change/name" + qInfo],
+        ["mail", "Email", userData.email, 0x2563EB, "/account/change/email" + qInfo],
+        ["calendar_month", "Birthday", userData.born ? userData.born.toLocaleDateString(props.client?.hl || "en-US") : "Not set", 0x6366F1, "/account/change/birthday" + qInfo],
         null,
         ["fingerprint", "Password", "••••••••", 0x8B5CF6, "/account/change/pwd" + qInfo],
-        ["lock", "Security", "Manager, delete or etc your account", 0x9E5116, "/account/security" + qInfo],
+        ["lock", "Security", "Manage account settings and security", 0xEF4444, "/account/security" + qInfo],
         null,
-        ["home", "Home location", "No location", 0xF59E0B, "/account/change/homelocal" + qInfo],
-        ["public", "Country", "Not set", 0x10B981, "/account/change/country" + qInfo],
+        ["home", "Home location", "Location not set", 0xF59E0B, "/account/change/homelocal" + qInfo],
+        ["public", "Country", "Country not selected", 0x10B981, "/account/change/country" + qInfo],
         null,
-        ["family_restroom", "Family Link", "No links", 0x22C55E, "/families" + qInfo],
-        ["devices", "Devices", "Manage devices", 0x64748B, "/account/devices" + qInfo]
+        ["family_restroom", "Family Link", "No family links", 0x22C55E, "/account/families" + qInfo],
+        ["devices", "Devices", "Manage your devices", 0x64748B, "/account/devices" + qInfo]
       ] : (
         pageId === "security_account" ? [
           ["graph_2", "Connections", "No connections", 0x18B92E, "/account/connections" + qInfo],
