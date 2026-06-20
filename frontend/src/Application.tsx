@@ -1,6 +1,7 @@
 import Header from "./layout/header";
 import Football from "./layout/football";
 import PreferencesScreen from "./preferences";
+import "./Search.scss"
 import "./Application.scss"
 import React, {
   useState,
@@ -8,10 +9,12 @@ import React, {
   useRef,
   Suspense,
   useCallback
-} from "react"
+} from "react";
 
 
-import SG from  "./sign-in/index"
+
+import Search from "./Search"
+import SG from "./sign-in/index"
 
 
 export default function App({
@@ -29,20 +32,20 @@ export default function App({
 
   return (
     <>
-      {data[0] !== "sg" && <Header page={data[0]} />}
+      {data[0] !== "sg" && <Header page={data[0]}>{data[0] === "search" && <Input />}</Header>}
       <Get page={data[0]} data={data[1]} />
     </>
   )
 }
 
-  //  <Input />
+
   function Get({
     data, page
   }: {
     data: any, page: string
   }) {
 
-    if (page === "preferences" || data.preferences) return <PreferencesScreen data={data.preferences? ({ page: data.preferences }) : data} />;
+    if (page === "preferences" || data.preferences) return <PreferencesScreen data={data.preferences? ({ page: data.preferences }): data} />;
     if (page === "sg") {
 
 
@@ -73,7 +76,7 @@ export default function App({
             </a>
             ))}
           {about.buttons?.map((a: any, index: number) => (
-            <button className={"action-button " + (a.href ? "endpoint" : "handle")} key={index} onClick={() => { document.location.href = a.href }} data-href={a.href} role={a.href ? "link": "button"}>{a.title}</button>
+            <button className={"action-button " + (a.href ? "endpoint": "handle")} key={index} onClick={() => { document.location.href = a.href }} data-href={a.href} role={a.href ? "link": "button"}>{a.title}</button>
           ))}
 
 
@@ -106,40 +109,56 @@ export default function App({
   if (page == "home") {
     return <div className="d73">
       <h1>Yothness</h1>
+      <Input />
       {sports && (<div className="sports-rows">
         {sports.list?.map((data: any, index: number) => (<Football key={data.id + index} data={data} />))}
       </div>
       )}
     </div>
   }
-  return <>
-    {actions?.map((a: any, index: number, arr: any[]) => (a === null ? <div style={ { height: 12 }} />: (
-      <a href={a[4] || "#"} style={ {
-        // @ts-ignore
-        "--c": "#" + a[3].toString(16)
-      }} data-is-last={!arr[index - 1]} data-is-first={!arr[index + 1]} className="action-link flex endpoint">
-        <span className="msr-icon">{a[0]}</span>
-        <div>
-          <div className="title">
-            {a[1]}
-          </div>
-          <span>{a[2]}</span>
-        </div>
-      </a>
-    )))}
-    { form && (
-      <div>
-        <h2>{form[0]}</h2>
-        <form action="?form=1">
-          {form[1]?.map((q: any, index: number) => (
-            <div className="sg-aad">
-              <input required autoFocus className="inp" name={q[4]} type={q[3]} placeholder={q[1]} defaultValue={q[2] || ""} />
-            <label>{q[1]}</label>
-          </div>
-          ))}
-      </form>
-    </div>
-  )}
+  if (page == "search") {
+    return (
+<Search />
+    )
+}
+return <>
+{actions?.map((a: any, index: number, arr: any[]) => (a === null ? <div style={ { height: 12 }} />: (
+<a href={a[4] || "#"} style={ {
+// @ts-ignore
+"--c": "#" + a[3].toString(16)
+}} data-is-last={!arr[index - 1]} data-is-first={!arr[index + 1]} className="action-link flex endpoint">
+<span className="msr-icon">{a[0]}</span>
+<div>
+<div className="title">
+{a[1]}
+</div>
+<span>{a[2]}</span>
+</div>
+</a>
+)))}
+
+{ form && (
+<div>
+<h2>{form[0]}</h2>
+<form
+onSubmit={async e => {
+
+e.preventDefault();
+}}
+action="?form=1"
+>
+{form[1]?.map((q: any, index: number) => (
+<div key={index + "/" + q[3]} className="sg-aad">
+<input required autoFocus className="inp" name={q[4]} type={q[3]} placeholder={q[1]} defaultValue={q[2] || ""} />
+<label>{q[1]}</label>
+</div>
+))}
+{form[3]?.map((q: any, index: number) => (
+<button className={"action-button"} key={index} role={"submit"}>{q[1]}</button>
+))}
+</form>
+</div>
+)}
 </>
 }
 let hl = window?.navigator?.language || ""
@@ -186,18 +205,19 @@ ref={form}
 onSubmit={SubmitFunction}
 className="f73">
 <div className="d74">
-<input
-name="q"
-onKeyUp={() => {}}
-ref={input}
-onBlur={() => setTimeout(() => setIsFocused(false), 400)}
-required
-placeholder="Search"
-onFocus={fsi}
-onInput={fsi}
-/>
-<button type="submit" className="msr-icon">search</button>
-</div>https://www.google.com/search?safe=active&sa=X&sca_esv=808a72af6f9e2127&hl=en&gl=BR&q=Brazil+national+football+team&stick=H4sIAAAAAAAAAONgFuLQz9U3MDYoNFfiBLEMjU2N4rVUspOt9IsL8otKiqFUfGJxcX5yZmJJZn5esVVJamJu8SJWWaeixKrMHIU8sHBijkJafn5JUmJOjgJIwQ5WRgDkoK15YAAAAA&ved=2ahUKEwjLmaeExY-VAxX6ppUCHWE2M10QxA16BAgzEAM&biw=606&bih=723&dpr=1.78
+  <input
+    name="q"
+    defaultValue={(window as any).I || ""}
+    onKeyUp={() => {}}
+    ref={input}
+    onBlur={() => setTimeout(() => setIsFocused(false), 400)}
+    required
+    placeholder="Search"
+    onFocus={fsi}
+    onInput={fsi}
+  />
+  <button type="submit" className="msr-icon">search</button>
+</div>
 {(data?.[1]?.length && isFocused && <div className="box">
 {data[1].map((a: string) => (
 <span className="d70" onClick={() => {

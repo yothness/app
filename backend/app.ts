@@ -2,22 +2,74 @@ import { Hono, Context } from 'hono'
 import { getCookie } from 'hono/cookie'
 import { isValidDigest, encrypt, decrypt } from './crypto'
 import { CreateAnAccount, SignIn, Get$ } from './sign_in'
+import Search, { $$$ } from './search'
 import Page from './pages'
 import pool from './database'
 
 
-
+const LIMIT_PER_PAGE = 16;
 
 
 
 const app = new Hono()
 
 app.get('/gen_204', (c) => new Response(void 0, { status: 204 }))
-
+/**
+ * A = TIME FOR SEARCH
+ * B = TOTAL RESULTS
+ */
 app.get('/jsd/:type', async (c) => {
-  const script = ``
-  
+  let script = ``
+  try { 
+    const [U, HL, I, BL, GL, N = '0'] = c.req.param("type").split(".");
+    if (U === "AA" && I === "EE" && BL) {
+       const Q = atob(BL.slice(6))
+       const K = (await Search(Q, GL))[0];
+       
+       if (K) {
+         script += `W.C="Total ${K.total} (${K.time_resp}ms)";`
+         for (let i = 0; i < K.results.length; i++) {
+           const a = K.results[i]
+           K.results[i] = {
+             a0: a.site_name,
+             a1: a.path,
+             a2: "https://" + a.domain,
+             a4: `https://${a.domain}/favicon.ico`,
+             b0: a.title,
+             b1: a.d2?.trim() || a.description,
+           }
+         }
+         script += `W.I=${JSON.stringify(Q)};W.R=${JSON.stringify(K.results)};document.title=W.I+" — Yothness search";`
+         
+       }
+       
+    }
+  } catch {
+    script = ""
+  }
   return c.body(`window.app=window.app||{};(function(Y,W){${script}})(window.app,window);`, 201, {
+    "Content-Type": "application/javascript; charset=utf-8",
+    "Cache-Control": "private, no-store",
+  });
+})
+
+app.get('/api/complete', async (c) => {
+  const { q, hl, gl, callback } = c.req.query()
+  
+  const U = q?.trim() ? await $$$(q) : []
+  const K = new Array<string>(U.length);
+  for (let i = 0; i < U.length; i++) {
+    K[i] = U[i].value
+  }
+  
+   
+  let data = JSON.stringify([q, K]);
+  
+  if (callback) {
+    data = `window.${callback}&&${callback}(${data})`
+  }
+  
+  return c.body(data, 201, {
     "Content-Type": "application/javascript; charset=utf-8",
     "Cache-Control": "private, no-store",
   });
@@ -139,6 +191,7 @@ app.post('/_/v3/csq', async (c) => {
 })
 
 app.get('/', Page("home"))
+app.get('/search', Page("search"))
 app.get('/about', Page("about"))
 app.get('/account', Page("account"))
 app.get('/account/families', Page("families_account"))

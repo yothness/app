@@ -108,23 +108,35 @@ export default async function Data(
              ]
              break
            case "birthday":
+             const date = userData.born
+
+              const value =
+                date.getFullYear() + "-" +
+                String(date.getMonth() + 1).padStart(2, "0") + "-" +
+                String(date.getDate()).padStart(2, "0");
+              
              title = "Birthday"
              entries = [
-               [0, "Birthday", userData.born, "date", "bn"]
+               [0, "Birthday", value, "date", "bn"]
              ]
              break
            case "pwd":
              title = "Change Your password"
              entries = [
-               [0, "Password", '', "password", "pwd"],
-               [0, "Confirm Password", '', "password", "pwd"]
+               [0, "Currently Password", '', "password", "pwd"],
+               [0, "Password", '', "password", "pwd_0"],
+               [0, "Confirm Password", '', "password", "pwd_1"]
              ]
              break
         }
   
         data.form = [
           title,
-          entries
+          entries,
+          "/_/v3/c_update?e=1&of=" + type,
+           [
+            ["Confirm"]
+          ]
         ]
       }
       if (pageId === "families_account") {
@@ -220,7 +232,7 @@ export default async function Data(
      break;
    case "home":
      
-    if (props.client?.sfc) {
+    if (props.client?.sfc && false) {
     const t = await getFixtures({
       limit: 3,
       country: countryHttp || props.client?.gl || "br"
