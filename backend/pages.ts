@@ -52,6 +52,30 @@ function resolveLanguage(
   // Fallback final
   return "en";
 }
+
+const isRTL: Record<string, true | null> = {
+  'ar': true,
+  'arc': true,
+  'ckb': true,
+  'dv': true,
+  'fa': true,
+  'ha': true,
+  'he': true,
+  'iw': true,
+  'khw': true,
+  'ks': true,
+  'ku': true,
+  'mzn': true,
+  'nqo': true,
+  'pnb': true,
+  'ps': true,
+  'sd': true,
+  'syr': true,
+  'ug': true,
+  'ur': true,
+  'yi': true,
+}
+
 export default function Page(pageId: string, fn?: (c: Context) => any) {
   return async (c: Context) => {
     try {
@@ -145,7 +169,7 @@ export default function Page(pageId: string, fn?: (c: Context) => any) {
       const LOGO = `<img src="https://yothness.vercel.app/s/_/img.static/events/AAAAA00.gif" alt="World Cup 2026 | Yothness" class="enent"/>`
       const LOGO_URL = `/search?q=World+Cup+2026&hl=${props.client?.hl}&gl=${props.client?.gl}`
       
-      let HTML:any = `<!DOCTYPE html><html ${pageId == "search" ?`itemscope="" itemtype="http://schema.org/SearchResultsPage"` : ""} dir="ltr" ${isDark?"dark":""} lang="${LANG_HTML}"><head><meta name="viewport" content="width=device-width, initial-scale=1.0${!isDasktop ? ", maximum-scale=1.0, user-scalable=no":""}"><title>Yothness</title>${
+      let HTML:any = `<!DOCTYPE html><html ${pageId == "search" ?`itemscope="" itemtype="http://schema.org/SearchResultsPage"` : ""} dir="${isRTL[props.client.hl] ? "rtl" : "ltr"}" ${isDark?"dark":""} lang="${LANG_HTML}"><head><meta name="viewport" content="width=device-width, initial-scale=1.0${!isDasktop ? ", maximum-scale=1.0, user-scalable=no":""}"><title>Yothness</title>${
         (canonicalUrl ? `<link rel="canonical" href="${canonicalUrl}"/>`:"")
       }<meta property="og:site_name" content="Yothness"/><meta property="og:image" content="data:,"/><meta property="og:image:width" content="0"/><meta property="og:image:height" content="0"/><script src="/jsd/${JSID}.js" nonce="${nonce}"></script><script src="https://cdn.jsdelivr.net/npm/eruda" nonce="${nonce}"></script><script>eruda.init();</script><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="application-title" content="Yothness" /><script>var app=${JSON.stringify(application)};</script></head><body><a hidden class="logo endpoint" href="${LOGO_URL}" logo-app id="logo">${LOGO}</a>${HTML_BUTTON_USER}<script>var E=document.createElement("meta");E.name="referrer";E.content="origin-when-cross-origin";document.getElementsByTagName("head")[0].appendChild(E);E=null</script><script>var appData=${JSON.stringify(data)};</script><wf-app id="application"></wf-app><script src="${src}" ${!isDev?"":`crossorigin="anonymous" `}nonce="${nonce}"></script></body></html>`
 

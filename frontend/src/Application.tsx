@@ -1,6 +1,7 @@
 import Header from "./layout/header";
 import Football from "./layout/football";
 import PreferencesScreen from "./preferences";
+import Form from "./layout/form";
 import "./Search.scss"
 import "./Application.scss"
 import React, {
@@ -137,28 +138,7 @@ return <>
 </a>
 )))}
 
-{ form && (
-<div>
-<h2>{form[0]}</h2>
-<form
-onSubmit={async e => {
-
-e.preventDefault();
-}}
-action="?form=1"
->
-{form[1]?.map((q: any, index: number) => (
-<div key={index + "/" + q[3]} className="sg-aad">
-<input required autoFocus className="inp" name={q[4]} type={q[3]} placeholder={q[1]} defaultValue={q[2] || ""} />
-<label>{q[1]}</label>
-</div>
-))}
-{form[3]?.map((q: any, index: number) => (
-<button className={"action-button"} key={index} role={"submit"}>{q[1]}</button>
-))}
-</form>
-</div>
-)}
+{form && <Form form={form} />}
 </>
 }
 let hl = window?.navigator?.language || ""

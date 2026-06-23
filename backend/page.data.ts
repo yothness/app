@@ -73,7 +73,7 @@ export default async function Data(
       const qInfo = `?u=${i}`
       console.log(userData)
       data.actions = pageId === "account" ?  [
-        ["person", "Name", userData.name, 0x3B82F6, "/account/change/name" + qInfo],
+        ["person", i18n["account.name"], userData.name, 0x3B82F6, "/account/change/name" + qInfo],
         ["mail", "Email", userData.email, 0x2563EB, "/account/change/email" + qInfo],
         ["calendar_month", "Birthday", userData.born ? userData.born.toLocaleDateString(props.client?.hl || "en-US") : "Not set", 0x6366F1, "/account/change/birthday" + qInfo],
         null,
@@ -96,9 +96,9 @@ export default async function Data(
         let entries: any[] = null!, title = ""
         switch (type) {
            case "name":
-             title = "Change Your Name"
+             title = i18n["account.change.name"]
              entries = [
-               [0, "Name", userData.name, "text", "n"]
+               [0, i18n["account.name"], userData.name, "text", "n"]
              ]
              break
            case "email":
@@ -117,7 +117,8 @@ export default async function Data(
               
              title = "Birthday"
              entries = [
-               [0, "Birthday", value, "date", "bn"]
+               [0, "Birthday", value, "date", "bn"],
+               [3, "Show animation and event on my profile when you have a birthday", false, null, "bn"]
              ]
              break
            case "pwd":
@@ -180,25 +181,20 @@ export default async function Data(
        title = "Create an Account" 
        description = "Create an account!"
        inp = [
-          [0, "Name", null, { minLength: 128 }, "n", "text"],
+          [0, i18n["account.name"], null, { minLength: 128 }, "n", "text"],
           [0, "Email", D.auto?.email, {}, "em", "email"],
           [0, i18n["account.sg.birth"], null, {}, "bn", "date"],
           [
             1,
             "Gender",
             -1,
-            [
-              [0, "Male"],
-              [1, "Female"],
-              [2, "Non-binary"],
-              [-1, "Prefer not to say"]
-            ],
+            i18n["gander.values"]?.split("|").map((e: string, i: number) => ([i === 3 ? -1 : i, e])),
             "gn"
           ],
           [0, "Create Password", null, {}, "pwd", "password"]
        ];
      } else if (id === 4) {
-       description = `Login with ${D.user?.[0]?.name || "-"} (${D.auto?.email || "-"})`
+       description = i18n["account.lgw.email"]?.replace("$NAME", D.user?.[0]?.name || "-").replace("$EMAIL", D.auto?.email || "-")
        inp = [
           [0, "Email", D.auto?.email, { hidden: true }, "em", "email"],
           [0, "Password", null, {}, "pwd", "password"],

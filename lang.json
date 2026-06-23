@@ -2,24 +2,17 @@
   "en-GB": {
     "NAME": "English (UK)",
     "LANG": "en-GB",
-
     "apps.all_service": "Discover all of Yothness's services!",
     "apps.title": "Apps & Services",
-
     "about.title": "Yothness, Make Your Dreams Come True",
     "about.some_apps": "Discover some of Yothness's services!",
-
     "update.title": "News & Updates",
     "update.status.newness": "What's New",
-
     "families.title": "Help keep your family safer online",
-
     "_linguage": "Language",
     "_linguage.select": "Select a language",
-
     "_off": "Off",
     "_on": "On",
-
     "sport.status.NS": "Not Started",
     "sport.status.1H": "First Half",
     "sport.status.HT": "Half Time",
@@ -36,49 +29,39 @@
     "sport.status.ABD": "Abandoned",
     "sport.status.AWD": "Awarded",
     "sport.status.WO": "Walkover",
-
     "sport.options": "Football",
     "sport.options.desc": "Show football matches, live scores and results on the home page.",
-
     "tap.account": "Account",
     "tap.account.button": "Manage Account or Sign In",
-
     "tap.preferences": "Preferences",
-
     "tap.privacy": "Privacy",
-
     "theme.device": "Use Device Theme",
     "theme.label": "Theme",
     "theme.select": "Choose a Theme",
-
     "account.sg.birth": "Date of Birth",
     "account.sg.back": "Back",
     "account.sg.rue": "Sign up with this email",
     "account.sg.next": "Continue",
-    "account.sg.sign_in": "Sign In"
+    "account.sg.sign_in": "Sign In",
+    "account.name": "Name",
+    "account.change.name": "Change Your Name",
+    "gander.values": "Male|Female|Non-binary|Prefer not to say",
+    "account.lgw.email": "Continue as $NAME ($EMAIL)"
   },
   "en": {
     "NAME": "English",
     "LANG": "en-US",
-
     "apps.all_service": "Discover all of Yothness's services!",
     "apps.title": "Apps & Services",
-
     "about.title": "Yothness, Make Your Dreams Come True",
     "about.some_apps": "Discover some of Yothness's services!",
-
     "update.title": "News & Updates",
     "update.status.newness": "Newness",
-
     "families.title": "Help keep your family safer online",
-
     "_linguage": "Linguage",
     "_linguage.select": "Select a language",
-
     "_off": "Off",
     "_on": "On",
-
-
     "sport.status.NS": "Not Started",
     "sport.status.1H": "First Half",
     "sport.status.HT": "Half Time",
@@ -95,48 +78,39 @@
     "sport.status.ABD": "Abandoned",
     "sport.status.AWD": "Awarded",
     "sport.status.WO": "Walkover",
-
     "sport.options": "Football",
     "sport.options.desc": "Show football matches, live scores, and results on the home page.",
-
     "tap.account": "Account",
     "tap.account.button": "Manage Account or Sign In",
-
     "tap.preferences": "Preferences",
-
     "tap.privacy": "Privacy",
-
     "theme.device": "Use Device Theme",
     "theme.label": "Theme",
     "theme.select": "Choose a Theme",
-
     "account.sg.birth": "Date of birth",
     "account.sg.back": "Back",
     "account.sg.rue": "Sign up with this email",
     "account.sg.next": "Continue",
-    "account.sg.sign_in": "Sign In"
+    "account.sg.sign_in": "Sign In",
+    "account.name": "Name",
+    "account.change.name": "Change Your Name",
+    "gander.values": "Male|Female|Non-binary|Prefer not to say",
+    "account.lgw.email": "Continue as $NAME ($EMAIL)"
   },
   "es": {
     "NAME": "Español",
     "LANG": "es-ES",
-
     "apps.all_service": "¡Descubre todos los servicios de Yothness!",
     "apps.title": "Aplicaciones & servicios",
-
     "about.title": "Yothness, Haz realidad tus sueños",
     "about.some_apps": "¡Descubre algunos de los servicios de Yothness!",
-
     "update.title": "Novedades & actualizaciones",
     "update.status.newness": "Novedad",
-
     "families.title": "Ayuda a mantener a tu familia más segura en línea",
-
     "_linguage": "Idioma",
     "_linguage.select": "Seleccione un idioma",
-
     "_off": "Desactivado",
     "_on": "Activado",
-
     "sport.status.NS": "No Iniciado",
     "sport.status.1H": "Primer Tiempo",
     "sport.status.HT": "Descanso",
@@ -153,172 +127,39 @@
     "sport.status.ABD": "Suspendido",
     "sport.status.AWD": "Victoria por W.O.",
     "sport.status.WO": "W.O.",
-
     "sport.options": "Fútbol",
     "sport.options.desc": "Mostrar partidos, marcadores en vivo y resultados de fútbol en la página principal.",
-
     "tap.account": "Cuenta",
     "tap.account.button": "Administrar Cuenta o Iniciar Sesión",
-
     "tap.preferences": "Preferencias",
-
     "tap.privacy": "Privacidad",
-
     "theme.device": "Usar Tema del Dispositivo",
     "theme.label": "Tema",
     "theme.select": "Elegir un Tema",
-
     "account.sg.birth": "Fecha de nacimiento",
-
     "account.sg.back": "Atrás",
-
     "account.sg.rue": "Regístrate con este correo electrónico",
-
     "account.sg.next": "Continuar",
-
-    "account.sg.sign_in": "Iniciar sesión"
+    "account.sg.sign_in": "Iniciar sesión",
+    "account.name": "Nombre",
+    "account.change.name": "Cambiar tu nombre",
+    "gander.values": "Masculino|Femenino|No binario|Prefiero no decirlo",
+    "account.lgw.email": "Continuar como $NAME ($EMAIL)"
   },
-  "pt": {
-    "NAME": "Português",
-    "LANG": "pt-BR",
-
-    "apps.all_service": "Descubra todos os serviços da Yothness!",
-    "apps.title": "Aplicativos e Serviços",
-
-    "about.title": "Yothness, Realize Seus Sonhos",
-    "about.some_apps": "Descubra alguns dos serviços da Yothness!",
-
-
-    "update.title": "Notícias e Atualizações",
-    "update.status.newness": "Novidades",
-
-
-    "families.title": "Ajude a manter sua família mais segura online",
-
-    "_linguage": "Idioma",
-    "_linguage.select": "Selecione um idioma",
-
-    "_off": "Desativado",
-    "_on": "Ativado",
-
-    "sport.status.NS": "Não Iniciado",
-    "sport.status.1H": "Primeiro Tempo",
-    "sport.status.HT": "Intervalo",
-    "sport.status.2H": "Segundo Tempo",
-    "sport.status.ET": "Prorrogação",
-    "sport.status.BT": "Intervalo da Prorrogação",
-    "sport.status.P": "Pênaltis",
-    "sport.status.LIVE": "Ao Vivo",
-    "sport.status.FT": "Encerrado",
-    "sport.status.AET": "Encerrado na Prorrogação",
-    "sport.status.PEN": "Encerrado nos Pênaltis",
-    "sport.status.PST": "Adiado",
-    "sport.status.CANC": "Cancelado",
-    "sport.status.ABD": "Abandonado",
-    "sport.status.AWD": "Vitória por W.O.",
-    "sport.status.WO": "W.O.",
-
-    "sport.options": "Futebol",
-    "sport.options.desc": "Exibir partidas, placares ao vivo e resultados de futebol na página inicial.",
-
-    "tap.account": "Conta",
-    "tap.account.button": "Gerenciar Conta ou Entrar",
-
-    "tap.preferences": "Preferências",
-
-    "tap.privacy": "Privacidade",
-
-    "theme.device": "Usar Tema do Dispositivo",
-    "theme.label": "Tema",
-    "theme.select": "Escolher um Tema",
-
-    "account.sg.birth": "Data de nascimento",
-    "account.sg.back": "Voltar",
-    "account.sg.rue": "Cadastre-se com este e-mail",
-    "account.sg.next": "Continuar",
-
-    "account.sg.sign_in": "Entrar"
-  },
-  "ko": {
-    "NAME": "한국어",
-    "LANG": "ko-KR",
-
-    "apps.all_service": "Yothness의 모든 서비스를 만나보세요!",
-    "apps.title": "앱 및 서비스",
-
-    "about.title": "Yothness, 당신의 꿈을 현실로 만드세요",
-    "about.some_apps": "Yothness의 일부 서비스를 만나보세요!",
-
-    "update.title": "뉴스 및 업데이트",
-    "update.status.newness": "새 소식",
-
-    "families.title": "가족의 온라인 안전을 지켜보세요",
-
-    "_linguage": "언어",
-    "_linguage.select": "언어 선택",
-
-    "_off": "끔",
-    "_on": "켬",
-
-    "sport.status.NS": "경기 전",
-    "sport.status.1H": "전반전",
-    "sport.status.HT": "하프타임",
-    "sport.status.2H": "후반전",
-    "sport.status.ET": "연장전",
-    "sport.status.BT": "연장전 휴식",
-    "sport.status.P": "승부차기",
-    "sport.status.LIVE": "생중계",
-    "sport.status.FT": "경기 종료",
-    "sport.status.AET": "연장전 종료",
-    "sport.status.PEN": "승부차기 종료",
-    "sport.status.PST": "연기됨",
-    "sport.status.CANC": "취소됨",
-    "sport.status.ABD": "중단됨",
-    "sport.status.AWD": "몰수승",
-    "sport.status.WO": "부전승",
-
-    "sport.options": "축구",
-    "sport.options.desc": "홈 화면에 축구 경기, 실시간 점수 및 결과를 표시합니다.",
-
-    "tap.account": "계정",
-    "tap.account.button": "계정 관리 또는 로그인",
-
-    "tap.preferences": "환경설정",
-
-    "tap.privacy": "개인정보 보호",
-
-    "theme.device": "기기 테마 사용",
-    "theme.label": "테마",
-    "theme.select": "테마 선택",
-
-    "account.sg.birth": "생년월일",
-    "account.sg.back": "뒤로",
-    "account.sg.rue": "이 이메일로 가입하기",
-    "account.sg.next": "계속",
-    "account.sg.sign_in": "로그인"
-  },
-
   "fr": {
     "NAME": "Français",
     "LANG": "fr-FR",
-
     "apps.all_service": "Découvrez tous les services de Yothness !",
     "apps.title": "Applications et services",
-
     "about.title": "Yothness, réalisez vos rêves",
     "about.some_apps": "Découvrez certains services de Yothness !",
-
     "update.title": "Actualités et mises à jour",
     "update.status.newness": "Nouveautés",
-
     "families.title": "Aidez à protéger votre famille en ligne",
-
     "_linguage": "Langue",
     "_linguage.select": "Choisir une langue",
-
     "_off": "Désactivé",
     "_on": "Activé",
-
     "sport.status.NS": "Pas commencé",
     "sport.status.1H": "Première mi-temps",
     "sport.status.HT": "Mi-temps",
@@ -335,224 +176,88 @@
     "sport.status.ABD": "Abandonné",
     "sport.status.AWD": "Attribué",
     "sport.status.WO": "Forfait",
-
     "sport.options": "Football",
     "sport.options.desc": "Afficher les matchs de football, les scores en direct et les résultats sur la page d'accueil.",
-
     "tap.account": "Compte",
     "tap.account.button": "Gérer le compte ou se connecter",
-
     "tap.preferences": "Préférences",
-
     "tap.privacy": "Confidentialité",
-
     "theme.device": "Utiliser le thème de l'appareil",
     "theme.label": "Thème",
     "theme.select": "Choisir un thème",
-
     "account.sg.birth": "Date de naissance",
     "account.sg.back": "Retour",
     "account.sg.rue": "S'inscrire avec cet e-mail",
     "account.sg.next": "Continuer",
-    "account.sg.sign_in": "Se connecter"
+    "account.sg.sign_in": "Se connecter",
+    "account.name": "Nom",
+    "account.change.name": "Modifier votre nom",
+    "gander.values": "Homme|Femme|Non binaire|Je préfère ne pas le dire",
+    "account.lgw.email": "Continuer en tant que $NAME ($EMAIL)"
   },
-  "zh-CN": {
-    "NAME": "简体中文",
-    "LANG": "zh-CN",
-
-    "apps.all_service": "探索 Yothness 的所有服务！",
-    "apps.title": "应用与服务",
-
-    "about.title": "Yothness，让梦想成真",
-    "about.some_apps": "探索 Yothness 的部分服务！",
-
-    "update.title": "新闻与更新",
-    "update.status.newness": "新内容",
-
-    "families.title": "帮助您的家人在网上更安全",
-
-    "_linguage": "语言",
-    "_linguage.select": "选择语言",
-
-    "_off": "关闭",
-    "_on": "开启",
-
-    "sport.status.NS": "未开始",
-    "sport.status.1H": "上半场",
-    "sport.status.HT": "中场休息",
-    "sport.status.2H": "下半场",
-    "sport.status.ET": "加时赛",
-    "sport.status.BT": "加时休息",
-    "sport.status.P": "点球大战",
-    "sport.status.LIVE": "直播中",
-    "sport.status.FT": "已结束",
-    "sport.status.AET": "加时结束",
-    "sport.status.PEN": "点球结束",
-    "sport.status.PST": "延期",
-    "sport.status.CANC": "已取消",
-    "sport.status.ABD": "已中止",
-    "sport.status.AWD": "判胜",
-    "sport.status.WO": "弃权",
-
-    "sport.options": "足球",
-    "sport.options.desc": "在首页显示足球比赛、实时比分和赛果。",
-
-    "tap.account": "账户",
-    "tap.account.button": "管理账户或登录",
-
-    "tap.preferences": "偏好设置",
-
-    "tap.privacy": "隐私",
-
-    "theme.device": "使用设备主题",
-    "theme.label": "主题",
-    "theme.select": "选择主题",
-
-    "account.sg.birth": "出生日期",
-    "account.sg.back": "返回",
-    "account.sg.rue": "使用此邮箱注册",
-    "account.sg.next": "继续",
-    "account.sg.sign_in": "登录"
-  },
-
-  "zh-TW": {
-    "NAME": "繁體中文（台灣）",
-    "LANG": "zh-TW",
-
-    "apps.all_service": "探索 Yothness 的所有服務！",
-    "apps.title": "應用程式與服務",
-
-    "about.title": "Yothness，讓夢想成真",
-    "about.some_apps": "探索 Yothness 的部分服務！",
-
-    "update.title": "最新消息與更新",
-    "update.status.newness": "最新內容",
-
-    "families.title": "幫助您的家人在網路上更安全",
-
-    "_linguage": "語言",
-    "_linguage.select": "選擇語言",
-
-    "_off": "關閉",
-    "_on": "開啟",
-
-    "sport.status.NS": "尚未開始",
-    "sport.status.1H": "上半場",
-    "sport.status.HT": "中場休息",
-    "sport.status.2H": "下半場",
-    "sport.status.ET": "延長賽",
-    "sport.status.BT": "延長賽休息",
-    "sport.status.P": "點球大戰",
-    "sport.status.LIVE": "直播中",
-    "sport.status.FT": "已結束",
-    "sport.status.AET": "延長賽結束",
-    "sport.status.PEN": "點球結束",
-    "sport.status.PST": "延期",
-    "sport.status.CANC": "已取消",
-    "sport.status.ABD": "已中止",
-    "sport.status.AWD": "判定獲勝",
-    "sport.status.WO": "不戰而勝",
-
-    "sport.options": "足球",
-    "sport.options.desc": "在首頁顯示足球比賽、即時比分和賽果。",
-
-    "tap.account": "帳戶",
-    "tap.account.button": "管理帳戶或登入",
-
-    "tap.preferences": "偏好設定",
-
-    "tap.privacy": "隱私",
-
-    "theme.device": "使用裝置主題",
-    "theme.label": "主題",
-    "theme.select": "選擇主題",
-
-    "account.sg.birth": "出生日期",
-    "account.sg.back": "返回",
-    "account.sg.rue": "使用此電子郵件註冊",
-    "account.sg.next": "繼續",
-    "account.sg.sign_in": "登入"
-  },
-
-  "zh-HK": {
-    "NAME": "繁體中文（香港）",
-    "LANG": "zh-HK",
-
-    "apps.all_service": "探索 Yothness 的所有服務！",
-    "apps.title": "應用程式及服務",
-
-    "about.title": "Yothness，讓夢想成真",
-    "about.some_apps": "探索 Yothness 的部分服務！",
-
-    "update.title": "最新消息及更新",
-    "update.status.newness": "最新內容",
-
-    "families.title": "協助您的家人在網上更安全",
-
-    "_linguage": "語言",
-    "_linguage.select": "選擇語言",
-
-    "_off": "關閉",
-    "_on": "開啟",
-
-    "sport.status.NS": "未開始",
-    "sport.status.1H": "上半場",
-    "sport.status.HT": "半場休息",
-    "sport.status.2H": "下半場",
-    "sport.status.ET": "加時賽",
-    "sport.status.BT": "加時休息",
-    "sport.status.P": "互射十二碼",
-    "sport.status.LIVE": "直播中",
-    "sport.status.FT": "已完場",
-    "sport.status.AET": "加時後完場",
-    "sport.status.PEN": "十二碼後完場",
-    "sport.status.PST": "延期",
-    "sport.status.CANC": "已取消",
-    "sport.status.ABD": "已中止",
-    "sport.status.AWD": "判定勝出",
-    "sport.status.WO": "不戰而勝",
-
-    "sport.options": "足球",
-    "sport.options.desc": "在首頁顯示足球賽事、即時比分及賽果。",
-
-    "tap.account": "帳戶",
-    "tap.account.button": "管理帳戶或登入",
-
-    "tap.preferences": "偏好設定",
-
-    "tap.privacy": "私隱",
-
-    "theme.device": "使用裝置主題",
-    "theme.label": "主題",
-    "theme.select": "選擇主題",
-
-    "account.sg.birth": "出生日期",
-    "account.sg.back": "返回",
-    "account.sg.rue": "使用此電郵註冊",
-    "account.sg.next": "繼續",
-    "account.sg.sign_in": "登入"
+  "pt": {
+    "NAME": "Português",
+    "LANG": "pt-BR",
+    "apps.all_service": "Descubra todos os serviços da Yothness!",
+    "apps.title": "Aplicativos e Serviços",
+    "about.title": "Yothness, Realize Seus Sonhos",
+    "about.some_apps": "Descubra alguns dos serviços da Yothness!",
+    "update.title": "Notícias e Atualizações",
+    "update.status.newness": "Novidades",
+    "families.title": "Ajude a manter sua família mais segura online",
+    "_linguage": "Idioma",
+    "_linguage.select": "Selecione um idioma",
+    "_off": "Desativado",
+    "_on": "Ativado",
+    "sport.status.NS": "Não Iniciado",
+    "sport.status.1H": "Primeiro Tempo",
+    "sport.status.HT": "Intervalo",
+    "sport.status.2H": "Segundo Tempo",
+    "sport.status.ET": "Prorrogação",
+    "sport.status.BT": "Intervalo da Prorrogação",
+    "sport.status.P": "Pênaltis",
+    "sport.status.LIVE": "Ao Vivo",
+    "sport.status.FT": "Encerrado",
+    "sport.status.AET": "Encerrado na Prorrogação",
+    "sport.status.PEN": "Encerrado nos Pênaltis",
+    "sport.status.PST": "Adiado",
+    "sport.status.CANC": "Cancelado",
+    "sport.status.ABD": "Abandonado",
+    "sport.status.AWD": "Vitória por W.O.",
+    "sport.status.WO": "W.O.",
+    "sport.options": "Futebol",
+    "sport.options.desc": "Exibir partidas, placares ao vivo e resultados de futebol na página inicial.",
+    "tap.account": "Conta",
+    "tap.account.button": "Gerenciar Conta ou Entrar",
+    "tap.preferences": "Preferências",
+    "tap.privacy": "Privacidade",
+    "theme.device": "Usar Tema do Dispositivo",
+    "theme.label": "Tema",
+    "theme.select": "Escolher um Tema",
+    "account.sg.birth": "Data de nascimento",
+    "account.sg.back": "Voltar",
+    "account.sg.rue": "Cadastre-se com este e-mail",
+    "account.sg.next": "Continuar",
+    "account.sg.sign_in": "Entrar",
+    "account.name": "Nome",
+    "account.change.name": "Alterar seu nome",
+    "gander.values": "Masculino|Feminino|Não binário|Prefiro não informar",
+    "account.lgw.email": "Continuar como $NAME ($EMAIL)"
   },
   "ar": {
     "NAME": "العربية",
     "LANG": "ar-SA",
-
     "apps.all_service": "اكتشف جميع خدمات Yothness!",
     "apps.title": "التطبيقات والخدمات",
-
     "about.title": "Yothness، حقّق أحلامك",
     "about.some_apps": "اكتشف بعض خدمات Yothness!",
-
     "update.title": "الأخبار والتحديثات",
     "update.status.newness": "الجديد",
-
     "families.title": "ساعد في الحفاظ على أمان عائلتك على الإنترنت",
-
     "_linguage": "اللغة",
     "_linguage.select": "اختر لغة",
-
     "_off": "إيقاف",
     "_on": "تشغيل",
-
     "sport.status.NS": "لم تبدأ",
     "sport.status.1H": "الشوط الأول",
     "sport.status.HT": "استراحة بين الشوطين",
@@ -569,25 +274,219 @@
     "sport.status.ABD": "متوقفة",
     "sport.status.AWD": "فوز اعتباري",
     "sport.status.WO": "فوز بالانسحاب",
-
     "sport.options": "كرة القدم",
     "sport.options.desc": "عرض مباريات كرة القدم والنتائج والنتائج المباشرة في الصفحة الرئيسية.",
-
     "tap.account": "الحساب",
     "tap.account.button": "إدارة الحساب أو تسجيل الدخول",
-
     "tap.preferences": "التفضيلات",
-
     "tap.privacy": "الخصوصية",
-
     "theme.device": "استخدام سمة الجهاز",
     "theme.label": "السمة",
     "theme.select": "اختر سمة",
-
     "account.sg.birth": "تاريخ الميلاد",
     "account.sg.back": "رجوع",
     "account.sg.rue": "إنشاء حساب باستخدام هذا البريد الإلكتروني",
     "account.sg.next": "متابعة",
-    "account.sg.sign_in": "تسجيل الدخول"
+    "account.sg.sign_in": "تسجيل الدخول",
+    "account.name": "الاسم",
+    "account.change.name": "تغيير اسمك",
+    "gander.values": "ذكر|أنثى|غير ثنائي|أفضل عدم الإفصاح",
+    "account.lgw.email": "المتابعة باسم $NAME ($EMAIL)"
+  },
+  "zh-CN": {
+    "NAME": "简体中文",
+    "LANG": "zh-CN",
+    "apps.all_service": "探索 Yothness 的所有服务！",
+    "apps.title": "应用与服务",
+    "about.title": "Yothness，让梦想成真",
+    "about.some_apps": "探索 Yothness 的部分服务！",
+    "update.title": "新闻与更新",
+    "update.status.newness": "新内容",
+    "families.title": "帮助您的家人在网上更安全",
+    "_linguage": "语言",
+    "_linguage.select": "选择语言",
+    "_off": "关闭",
+    "_on": "开启",
+    "sport.status.NS": "未开始",
+    "sport.status.1H": "上半场",
+    "sport.status.HT": "中场休息",
+    "sport.status.2H": "下半场",
+    "sport.status.ET": "加时赛",
+    "sport.status.BT": "加时休息",
+    "sport.status.P": "点球大战",
+    "sport.status.LIVE": "直播中",
+    "sport.status.FT": "已结束",
+    "sport.status.AET": "加时结束",
+    "sport.status.PEN": "点球结束",
+    "sport.status.PST": "延期",
+    "sport.status.CANC": "已取消",
+    "sport.status.ABD": "已中止",
+    "sport.status.AWD": "判胜",
+    "sport.status.WO": "弃权",
+    "sport.options": "足球",
+    "sport.options.desc": "在首页显示足球比赛、实时比分和赛果。",
+    "tap.account": "账户",
+    "tap.account.button": "管理账户或登录",
+    "tap.preferences": "偏好设置",
+    "tap.privacy": "隐私",
+    "theme.device": "使用设备主题",
+    "theme.label": "主题",
+    "theme.select": "选择主题",
+    "account.sg.birth": "出生日期",
+    "account.sg.back": "返回",
+    "account.sg.rue": "使用此邮箱注册",
+    "account.sg.next": "继续",
+    "account.sg.sign_in": "登录",
+    "account.name": "名称",
+    "account.change.name": "更改您的名称",
+    "gander.values": "男性|女性|非二元性别|不愿透露",
+    "account.lgw.email": "以 $NAME ($EMAIL) 继续"
+  },
+  "zh-TW": {
+    "NAME": "繁體中文（台灣）",
+    "LANG": "zh-TW",
+    "apps.all_service": "探索 Yothness 的所有服務！",
+    "apps.title": "應用程式與服務",
+    "about.title": "Yothness，讓夢想成真",
+    "about.some_apps": "探索 Yothness 的部分服務！",
+    "update.title": "最新消息與更新",
+    "update.status.newness": "最新內容",
+    "families.title": "幫助您的家人在網路上更安全",
+    "_linguage": "語言",
+    "_linguage.select": "選擇語言",
+    "_off": "關閉",
+    "_on": "開啟",
+    "sport.status.NS": "尚未開始",
+    "sport.status.1H": "上半場",
+    "sport.status.HT": "中場休息",
+    "sport.status.2H": "下半場",
+    "sport.status.ET": "延長賽",
+    "sport.status.BT": "延長賽休息",
+    "sport.status.P": "點球大戰",
+    "sport.status.LIVE": "直播中",
+    "sport.status.FT": "已結束",
+    "sport.status.AET": "延長賽結束",
+    "sport.status.PEN": "點球結束",
+    "sport.status.PST": "延期",
+    "sport.status.CANC": "已取消",
+    "sport.status.ABD": "已中止",
+    "sport.status.AWD": "判定獲勝",
+    "sport.status.WO": "不戰而勝",
+    "sport.options": "足球",
+    "sport.options.desc": "在首頁顯示足球比賽、即時比分和賽果。",
+    "tap.account": "帳戶",
+    "tap.account.button": "管理帳戶或登入",
+    "tap.preferences": "偏好設定",
+    "tap.privacy": "隱私",
+    "theme.device": "使用裝置主題",
+    "theme.label": "主題",
+    "theme.select": "選擇主題",
+    "account.sg.birth": "出生日期",
+    "account.sg.back": "返回",
+    "account.sg.rue": "使用此電子郵件註冊",
+    "account.sg.next": "繼續",
+    "account.sg.sign_in": "登入",
+    "account.name": "名稱",
+    "account.change.name": "更改您的名稱",
+    "gander.values": "男性|女性|非二元性別|不願透露",
+    "account.lgw.email": "以 $NAME ($EMAIL) 繼續"
+  },
+  "zh-HK": {
+    "NAME": "繁體中文（香港）",
+    "LANG": "zh-HK",
+    "apps.all_service": "探索 Yothness 的所有服務！",
+    "apps.title": "應用程式及服務",
+    "about.title": "Yothness，讓夢想成真",
+    "about.some_apps": "探索 Yothness 的部分服務！",
+    "update.title": "最新消息及更新",
+    "update.status.newness": "最新內容",
+    "families.title": "協助您的家人在網上更安全",
+    "_linguage": "語言",
+    "_linguage.select": "選擇語言",
+    "_off": "關閉",
+    "_on": "開啟",
+    "sport.status.NS": "未開始",
+    "sport.status.1H": "上半場",
+    "sport.status.HT": "半場休息",
+    "sport.status.2H": "下半場",
+    "sport.status.ET": "加時賽",
+    "sport.status.BT": "加時休息",
+    "sport.status.P": "互射十二碼",
+    "sport.status.LIVE": "直播中",
+    "sport.status.FT": "已完場",
+    "sport.status.AET": "加時後完場",
+    "sport.status.PEN": "十二碼後完場",
+    "sport.status.PST": "延期",
+    "sport.status.CANC": "已取消",
+    "sport.status.ABD": "已中止",
+    "sport.status.AWD": "判定勝出",
+    "sport.status.WO": "不戰而勝",
+    "sport.options": "足球",
+    "sport.options.desc": "在首頁顯示足球賽事、即時比分及賽果。",
+    "tap.account": "帳戶",
+    "tap.account.button": "管理帳戶或登入",
+    "tap.preferences": "偏好設定",
+    "tap.privacy": "私隱",
+    "theme.device": "使用裝置主題",
+    "theme.label": "主題",
+    "theme.select": "選擇主題",
+    "account.sg.birth": "出生日期",
+    "account.sg.back": "返回",
+    "account.sg.rue": "使用此電郵註冊",
+    "account.sg.next": "繼續",
+    "account.sg.sign_in": "登入",
+    "account.name": "名稱",
+    "account.change.name": "更改您的名稱",
+    "gander.values": "男性|女性|非二元性別|不願透露",
+    "account.lgw.email": "以 $NAME ($EMAIL) 繼續"
+  },
+  "ko": {
+    "NAME": "한국어",
+    "LANG": "ko-KR",
+    "apps.all_service": "Yothness의 모든 서비스를 만나보세요!",
+    "apps.title": "앱 및 서비스",
+    "about.title": "Yothness, 당신의 꿈을 현실로 만드세요",
+    "about.some_apps": "Yothness의 일부 서비스를 만나보세요!",
+    "update.title": "뉴스 및 업데이트",
+    "update.status.newness": "새 소식",
+    "families.title": "가족의 온라인 안전을 지켜보세요",
+    "_linguage": "언어",
+    "_linguage.select": "언어 선택",
+    "_off": "끔",
+    "_on": "켬",
+    "sport.status.NS": "경기 전",
+    "sport.status.1H": "전반전",
+    "sport.status.HT": "하프타임",
+    "sport.status.2H": "후반전",
+    "sport.status.ET": "연장전",
+    "sport.status.BT": "연장전 휴식",
+    "sport.status.P": "승부차기",
+    "sport.status.LIVE": "생중계",
+    "sport.status.FT": "경기 종료",
+    "sport.status.AET": "연장전 종료",
+    "sport.status.PEN": "승부차기 종료",
+    "sport.status.PST": "연기됨",
+    "sport.status.CANC": "취소됨",
+    "sport.status.ABD": "중단됨",
+    "sport.status.AWD": "몰수승",
+    "sport.status.WO": "부전승",
+    "sport.options": "축구",
+    "sport.options.desc": "홈 화면에 축구 경기, 실시간 점수 및 결과를 표시합니다.",
+    "tap.account": "계정",
+    "tap.account.button": "계정 관리 또는 로그인",
+    "tap.preferences": "환경설정",
+    "tap.privacy": "개인정보 보호",
+    "theme.device": "기기 테마 사용",
+    "theme.label": "테마",
+    "theme.select": "테마 선택",
+    "account.sg.birth": "생년월일",
+    "account.sg.back": "뒤로",
+    "account.sg.rue": "이 이메일로 가입하기",
+    "account.sg.next": "계속",
+    "account.sg.sign_in": "로그인",
+    "account.name": "이름",
+    "account.change.name": "이름 변경",
+    "gander.values": "남성|여성|논바이너리|밝히고 싶지 않음",
+    "account.lgw.email": "$NAME ($EMAIL)(으)로 계속하기"
   }
 }
