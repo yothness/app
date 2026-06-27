@@ -77,10 +77,10 @@
     padding: 24px;
     background: #111112;
     border-radius: 24px;
-    @media (max-width: 100vh) or (max-width: 900px)  {
+ //   @media (max-width: 100vh) or (max-width: 900px)  {
       width: 600px;
       flex-direction: column;
-    }
+    //}
     @media (max-width: 600px) {
       width: 100%;
       border-radius: 0;
