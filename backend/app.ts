@@ -6,6 +6,11 @@ import Search, { $$$ } from './search'
 import Page from './pages'
 import pool from './database'
 
+const allowed = new Set([
+  "https://worflix.vercel.app",
+  "http://localhost:3000"
+]);
+
 
 const LIMIT_PER_PAGE = 16;
 
@@ -53,28 +58,48 @@ app.get('/jsd/:type', async (c) => {
   });
 })
 
-app.get('/api/complete', async (c) => {
-  const { q, hl, gl, callback } = c.req.query()
-  
-  const U = q?.trim() ? await $$$(q) : []
-  const K = new Array<string>(U.length);
-  for (let i = 0; i < U.length; i++) {
-    K[i] = U[i].value
+app.get("/api/complete", async (c) => {
+  const { q, callback } = c.req.query();
+
+  const reqUrl = new URL(c.req.url);
+
+  const origin =
+    c.req.header("Origin") ??
+    (() => {
+      const referer = c.req.header("Referer");
+      return referer ? new URL(referer).origin : reqUrl.origin;
+    })();
+
+  if (origin !== reqUrl.origin && !allowed.has(origin)) {
+    return c.text('}],["",[]]', 403);
   }
-  
-   
-  let data = JSON.stringify([q, K]);
-  
+
+  const results = q?.trim() ? await $$$(q) : [];
+  const values = new Array<string>(results.length);
+
+  for (let i = 0; i < results.length; i++) {
+    values[i] = results[i].value;
+  }
+
+  let data = JSON.stringify([q ?? "", values]);
+
   if (callback) {
-    data = `window.${callback}&&${callback}(${data})`
+    data = `window.${callback}&&${callback}(${data});`;
   }
-  
-  return c.body(data, 201, {
+
+  const headers: Record<string, string> = {
     "Content-Type": "application/javascript; charset=utf-8",
     "Cache-Control": "private, no-store",
-  });
-})
-  
+  };
+
+  if (origin !== reqUrl.origin) {
+    headers["Access-Control-Allow-Origin"] = origin;
+    headers["Access-Control-Allow-Credentials"] = "true";
+    headers["Vary"] = "Origin";
+  }
+
+  return c.body(data, 200, headers);
+});
   
   
 app.get('/_/v3/run', async (c) => {
