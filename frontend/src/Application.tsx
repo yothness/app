@@ -1,6 +1,7 @@
 import Header from "./layout/header";
 import Football from "./layout/football";
 import PreferencesScreen from "./preferences";
+import AdsenseScreen from "./adsense";
 import Form from "./layout/form";
 import "./Search.scss"
 import "./Application.scss"
@@ -47,6 +48,7 @@ export default function App({
   }) {
 
     if (page === "preferences" || data.preferences) return <PreferencesScreen data={data.preferences? ({ page: data.preferences }): data} />;
+    if (page === "adsense") return <AdsenseScreen data={data.page} />;
     if (page === "sg") {
 
 

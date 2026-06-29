@@ -1,0 +1,140 @@
+.ads-create {
+  .main,
+  .sub-title {
+    padding: 0 8px;
+  }
+  .det {
+    opacity: 0.8;
+    line-height: 2.5;
+    font-size: 12px;
+  }
+  .preview {
+    display: flex;
+    background: #0f0f0f;
+    color: #eee;
+    padding: 18px;
+    border-radius: 8px;
+    overflow: hidden;
+    overflow: hidden;
+      align-items: start;
+    button {
+      background: #fff;
+      padding: 8px 16px;
+      color: #000;
+      border-radius: 16px;
+      font-size: 14px;
+      border: 0;
+    }
+    .info {
+      height: inherit;
+      box-sizing: border-box;
+      padding: 0 16px;
+      h2 {
+        margin-top: 8px;
+      }
+    }
+    .img {
+      position: relative;
+      min-width: 400px;
+      z-index: 1;
+      &:before {
+        padding-bottom: 56.25%;
+        display: block;
+        content:"";
+        width: 100%;
+      }
+      div {
+        background: red;
+        top: 0;
+        display: block;
+        content:"";
+        width: 100%;
+        filter: blur(24px);
+        left: 0;
+        height: 100%;
+        transform: scale(10);
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        z-index: -1;
+        opacity: .6;
+      }
+
+      img, iframe {
+        border-radius: 24px;
+        position: absolute;
+        border:none;
+        left: 0;
+        width: 100%;
+        top: 0;
+        height: 100%;
+      }
+    }
+  }
+        .url-link {
+        font-size: 12px;
+        display: inline-flex;
+        border-bottom: 1px dashed #fff;
+        margin-bottom: 8px;
+        pre{margin: 0;opacity: .8;}
+      }
+  .info {
+    flex: 1;
+    z-index: 8;
+    position: relative;
+  }
+  select,
+  input,
+  textarea {
+    display: block;
+    height: 56px;
+    padding: 0 16px;
+    background: #0000;
+    color: inherit;
+    resize: none;
+    border-radius: 8px;
+    border: 2px solid #ddf8;
+    font-family: Arial, Sans-Serif;
+  }
+  .card {
+    flex-wrap: wrap;
+    display: flex;
+    label {
+      padding: 0 8px;
+      margin-bottom: 8px;
+      box-sizing: border-box;
+      display: flex;
+      width: 50%;
+      flex-direction: column;
+      span {
+        line-height: 2;
+        font-size: 14px;
+      }
+    }
+  }
+  .source-card label {
+    width: 100%;
+  }
+  .label-sponsored {
+    color: #ddd;
+    opacity: .8;
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+}
+.pyqb {
+  background: #8884;
+  background: linear-gradient(26deg, #000, #222);
+  cursor: pointer;
+  border-radius: 24px;
+  margin: 2px 16px;
+  padding: 24px;
+  transition: transform 100ms;
+  h4 {
+    margin: 0;
+    margin-bottom: 6px;
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}

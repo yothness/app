@@ -76,7 +76,7 @@ export default function Login(props: { data: any }) {
               {err && (q[4] === err[0]) && <span>{err[1]}</span>} 
             </div>
           })}
-          <div className="flex action">
+          <div className="sg-ui9">
             {U[4] && (navigation?.canGoBack ?? true) ? <button onClick={() => navigation.back()} type="button">{U[4][0]}</button> : null}
             <div style={{flex:1}}/>
             {U.slice(5).map((q: any, index: number) => <button key={index} type={q[1] ? "submit" : "button"}>{q[0]}</button>)}

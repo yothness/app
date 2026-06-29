@@ -9,7 +9,7 @@ import Data from './page.data'
 import M from '../lang.json'
 const i18nData = M as any;
 
-const version = "AAAAAAAA5Y98NE1"
+const version = "AAAAAoAA5Y98NE1"
 
 const allowedCharsets = [
   "utf-8",

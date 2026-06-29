@@ -6,6 +6,15 @@
   font-weight: 300;
   src: url(https://fonts.gstatic.com/s/materialsymbolsrounded/v327/syl7-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190FjpZIvLgyidOK7BDB_Qb9vUdV6_gjDK-P3JuF_Zs-obHph2-jOcOzKPqw.woff2) format('woff2');
 }
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  * {
+    scrollbar-width: thin;
+  }
+}
 
 .msr-icon {
   user-select: none;
@@ -27,21 +36,23 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Sans-Serif;
-  background: #f8f9fb;
-  color: #101418;
+  background: #FFFBFE;
+  color: #1C1B1F;
   -webkit-font-smoothing: antialiased;
 }
 .service{
-  &,&:after{background: #eee;}
+  &,&:after{background: rgb(255,280,294);}
+  &-endpoint {background: #FFFBFE;}
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: #0b0d10;
-    color: #eee;
+    background: #141218;
+    color: #E6E1E5;
   }
   .service {
   &,&:after{  background: #0b0d10;}
+    &-endpoint {background: #141218;}
   }
 }
 .endpoint {
@@ -92,9 +103,9 @@ body {
   }
   flex: 1;
   padding: 0 21px;
-  margin: 0 -16px;
+  margin: 0 8px;
   border-radius: 24px 24px 0 0;
-    box-shadow: 0 0 8px #0002 inset;
+    box-shadow: 0 0 8px #2221 inset;
     img {
       width: 16px;
       height: 16px;
@@ -103,30 +114,13 @@ body {
     color: var(--c);
   }
   &-endpoint {
-    &:hover {
-    color: var(--c);
-      
-  &:before {
-    z-index: -1;
-    border-radius: 12px;
-    opacity: .2;
-    background: var(--c);
-    content: '';
-    position: absolute;
-    left: 0;
-    height: 100%;
-    right: 0;
-    width: 100%;
-  }
-    }
-    background: #8881;
+      transition: all 200ms;
     width: 33%;
     width: calc(33.3333% - 8px);
     height: 64px;
     text-align: center;
   padding: 0 16px;
   position: relative;
-    box-shadow: 0 0 8px #0002;
     
     align-items: center;
     justify-content: center;
@@ -136,6 +130,27 @@ body {
     border-radius: 12px;
     box-sizing: border-box;
 border: 2px solid #0000;
+    &:before {
+        transition: all 200ms;
+      content: '';
+    }
+    &:hover {
+      background: #000;
+      color: var(--c);
+        
+    &:before {
+        transition: all 200ms;
+      z-index: -1;
+      border-radius: 12px;
+      opacity: .2;
+      background: var(--c);
+      position: absolute;
+      left: 0;
+      height: 100%;
+      right: 0;
+      width: 100%;
+    }
+    }
     @media (max-width: 600px) {
       width: 50%;
       width: calc(50% - 8px);
@@ -224,7 +239,7 @@ body.read-mode:before {
   height: 100vh;
 }
 
-@media (prefers-contrast: more) {
+@media (prefers-contrast: _more) {
   body {
     background: #000;
     color: #fff;

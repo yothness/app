@@ -200,6 +200,7 @@ app.get('/account/change/:type', Page("change_account"))
 app.get('/news_update', Page("news_update"))
 app.get('/preferences', Page("preferences"))
 app.get('/families', Page("families"))
+app.get('/adsense', Page("adsense"))
 app.get('/apps/services', Page("apps_services"))
 
 app.get('/serviceLogin', (c) => {

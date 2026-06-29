@@ -161,6 +161,23 @@ export default async function Data(
   
   
   switch (pageId) {
+   case "adsense":
+     data.page = [
+       i18n["ad.create"],
+       "Create and publish a new advertisement, Which will be shown in Yothness's ads or Worflix's ads",
+       "Select the ad source/type",
+       "Select the source of the images or videos, or reuse a previously published post or video.",
+       [
+      //   ["Upload Images", "U1"],
+       //  ["Your post on Worflix", "PW"],
+       //  ["Your video/reels on Worflix", "VW"],
+       ],
+       {},
+       "Put Post id or url",
+       "Put Video id or url",
+       "Title of the ad"
+    ]
+     break;
    case "sg":
      
      const id: number = props.u2 ? parseInt(props.u2 , 16) : 0;

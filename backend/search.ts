@@ -105,42 +105,22 @@ export async function $$$(
 ) {
   return (
     await pool.query<{ value: string }>(`
-      WITH words AS (
-
-        SELECT lower(word) AS value
-        FROM public.pages p
-        JOIN public.sites s
-          ON s.id = p.site_id
-
-        CROSS JOIN LATERAL regexp_split_to_table(
-          concat_ws(
-            ' ',
-            s.site_name,
-            p.title,
-            p.path,
-            s.domain
-          ),
-          E'[^[:alnum:]]+'
-        ) AS word
-
-      )
-
-      SELECT
-        value
-
-      FROM words
-
-      WHERE
-        value LIKE lower($1) || '%'
-        AND length(value) > 2
-
-      GROUP BY value
-
-      ORDER BY
-        count(*) DESC,
-        length(value)
-
-      LIMIT 10;
+    WITH strs AS (
+      SELECT query as value FROM media.channel_search_history 
+      UNION
+      SELECT LOWER(name) FROM media.channel
+    )
+    SELECT
+      value,
+      similarity(value, LOWER($1)) AS score
+    FROM strs
+    WHERE
+      value LIKE LOWER($1) || '%'
+      OR value % LOWER($1)
+    ORDER BY
+      CASE WHEN value LIKE LOWER($1) || '%' THEN 0 ELSE 1 END,
+      similarity(value, LOWER($1)) DESC
+    LIMIT 16;
     `, [query])
   ).rows;
 }
