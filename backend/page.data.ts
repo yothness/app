@@ -164,7 +164,7 @@ export default async function Data(
    case "adsense":
      data.page = [
        i18n["ad.create"],
-       "Create and publish a new advertisement, Which will be shown in Yothness's ads or Worflix's ads",
+       i18n["ad.create.desc"],
        "Select the ad source/type",
        "Select the source of the images or videos, or reuse a previously published post or video.",
        [

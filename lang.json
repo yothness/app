@@ -47,7 +47,8 @@
     "account.change.name": "Change Your Name",
     "gander.values": "Male|Female|Non-binary|Prefer not to say",
     "account.lgw.email": "Continue as $NAME ($EMAIL)",
-    "ad.create": "Create Advertisement"
+    "ad.create": "Create Advertisement",
+    "ad.create.desc": "Create and publish a new advertisement, which may be shown across Yothness Ads and other Yothness services, such as Worflix."
   },
   "en": {
     "NAME": "English",
@@ -97,7 +98,8 @@
     "account.change.name": "Change Your Name",
     "gander.values": "Male|Female|Non-binary|Prefer not to say",
     "account.lgw.email": "Continue as $NAME ($EMAIL)",
-    "ad.create": "Create Advertisement"
+    "ad.create": "Create Advertisement",
+    "ad.create.desc": "Create and publish a new advertisement, which may be shown across Yothness Ads and other Yothness services, such as Worflix."
   },
   "es": {
     "NAME": "Español",
@@ -147,7 +149,8 @@
     "account.change.name": "Cambiar tu nombre",
     "gander.values": "Masculino|Femenino|No binario|Prefiero no decirlo",
     "account.lgw.email": "Continuar como $NAME ($EMAIL)",
-    "ad.create": "Crear anuncio"
+    "ad.create": "Crear anuncio",
+    "ad.create.desc": "Crea y publica un nuevo anuncio, que podrá mostrarse en Yothness Ads y en otros servicios de Yothness, como Worflix."
   },
   "fr": {
     "NAME": "Français",
@@ -197,7 +200,8 @@
     "account.change.name": "Modifier votre nom",
     "gander.values": "Homme|Femme|Non binaire|Je préfère ne pas le dire",
     "account.lgw.email": "Continuer en tant que $NAME ($EMAIL)",
-    "ad.create": "Créer une publicité"
+    "ad.create": "Créer une publicité",
+    "ad.create.desc": "Créez et publiez une nouvelle publicité, qui pourra être diffusée sur Yothness Ads et sur d'autres services de Yothness, tels que Worflix."
   },
   "pt": {
     "NAME": "Português",
@@ -247,7 +251,8 @@
     "account.change.name": "Alterar seu nome",
     "gander.values": "Masculino|Feminino|Não binário|Prefiro não informar",
     "account.lgw.email": "Continuar como $NAME ($EMAIL)",
-    "ad.create": "Criar anúncio"
+    "ad.create": "Criar anúncio",
+    "ad.create.desc": "Crie e publique um novo anúncio, que poderá ser exibido no Yothness Ads e em outros serviços da Yothness, como o Worflix."
   },
   "ar": {
     "NAME": "العربية",
@@ -297,7 +302,8 @@
     "account.change.name": "تغيير اسمك",
     "gander.values": "ذكر|أنثى|غير ثنائي|أفضل عدم الإفصاح",
     "account.lgw.email": "المتابعة باسم $NAME ($EMAIL)",
-    "ad.create": "إنشاء إعلان"
+    "ad.create": "إنشاء إعلان",
+    "ad.create.desc": "أنشئ وانشر إعلانًا جديدًا، والذي قد يتم عرضه عبر Yothness Ads وخدمات Yothness الأخرى، مثل Worflix."
   },
   "zh-CN": {
     "NAME": "简体中文",
@@ -347,7 +353,8 @@
     "account.change.name": "更改您的名称",
     "gander.values": "男性|女性|非二元性别|不愿透露",
     "account.lgw.email": "以 $NAME ($EMAIL) 继续",
-    "ad.create": "创建广告"
+    "ad.create": "创建广告",
+    "ad.create.desc": "建立並發布新的廣告，該廣告可能會顯示於 Yothness Ads 以及其他 Yothness 服務（例如 Worflix）中。"
   },
   "zh-TW": {
     "NAME": "繁體中文（台灣）",
@@ -397,7 +404,8 @@
     "account.change.name": "更改您的名稱",
     "gander.values": "男性|女性|非二元性別|不願透露",
     "account.lgw.email": "以 $NAME ($EMAIL) 繼續",
-    "ad.create": "建立廣告"
+    "ad.create": "建立廣告",
+    "ad.create.desc": "建立並發布新的廣告，該廣告可能會顯示於 Yothness Ads 以及其他 Yothness 服務（例如 Worflix）中。"
   },
   "zh-HK": {
     "NAME": "繁體中文（香港）",
@@ -447,7 +455,8 @@
     "account.change.name": "更改您的名稱",
     "gander.values": "男性|女性|非二元性別|不願透露",
     "account.lgw.email": "以 $NAME ($EMAIL) 繼續",
-    "ad.create": "建立廣告"
+    "ad.create": "建立廣告",
+    "ad.create.desc": "建立並發佈新的廣告，該廣告可能會顯示於 Yothness Ads 及其他 Yothness 服務（例如 Worflix）中。"
   },
   "ko": {
     "NAME": "한국어",
@@ -497,6 +506,7 @@
     "account.change.name": "이름 변경",
     "gander.values": "남성|여성|논바이너리|밝히고 싶지 않음",
     "account.lgw.email": "$NAME ($EMAIL)(으)로 계속하기",
-    "ad.create": "광고 만들기"
+    "ad.create": "광고 만들기",
+    "ad.create.desc": "새로운 광고를 만들고 게시하세요. 해당 광고는 Yothness Ads 및 Worflix와 같은 다른 Yothness 서비스에 표시될 수 있습니다."
   }
 }

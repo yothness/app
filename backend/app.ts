@@ -249,4 +249,41 @@ app.get('/v3/challenge/:type', c => {
   return sgp(c)
 })
 
+
+
+app.get("/ads/s", c => {
+  const U = new URL(c.req.url)
+  const html = ""
+  return new Response(html, {
+    status: 200,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+  
+      // Cache
+      "Cache-Control": "private, max-age=300",
+  
+      // Security
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "geolocation=(), camera=(), microphone=()",
+  
+      "X-Robots-Tag": "noindex, nofollow",
+  
+      "Content-Security-Policy": [
+        "default-src 'self';",
+        "img-src * data: https:;",
+        `script-src 'self' ${U.origin};`,
+        "style-src 'self' 'unsafe-inline';",
+        `connect-src ${U.origin};`,
+        "frame-ancestors *;"
+      ].join(" ")
+    }
+  });
+})
+app.get("/ads/u/trakring", c => {
+  return c.text('')
+})
+
+
+
 export default app
