@@ -106,21 +106,26 @@ export async function $$$(
   return (
     await pool.query<{ value: string }>(`
     WITH strs AS (
-      SELECT query as value FROM media.channel_search_history 
+      SELECT LOWER(query) AS value FROM media.channel_search_history
       UNION
       SELECT LOWER(name) FROM media.channel
+      UNION
+      SELECT handle FROM media.channel
+      UNION
+      SELECT regexp_split_to_table(LOWER(name), '\s+') AS value
+      FROM media.post
     )
-    SELECT
-      value,
-      similarity(value, LOWER($1)) AS score
-    FROM strs
-    WHERE
-      value LIKE LOWER($1) || '%'
-      OR value % LOWER($1)
-    ORDER BY
-      CASE WHEN value LIKE LOWER($1) || '%' THEN 0 ELSE 1 END,
-      similarity(value, LOWER($1)) DESC
-    LIMIT 16;
+SELECT
+  value,
+  similarity(value, LOWER($1)) AS score
+FROM strs
+WHERE
+  value LIKE LOWER($1) || '%'
+  OR value % LOWER($1)
+ORDER BY
+  CASE WHEN value LIKE LOWER($1) || '%' THEN 0 ELSE 1 END,
+  similarity(value, LOWER($1)) DESC
+LIMIT 16;
     `, [query])
   ).rows;
 }
