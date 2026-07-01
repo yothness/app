@@ -106,13 +106,13 @@ export async function $$$(
   return (
     await pool.query<{ value: string }>(`
     WITH strs AS (
-      SELECT LOWER(query) AS value FROM media.channel_search_history
+      SELECT query AS value FROM media.channel_search_history
       UNION
       SELECT LOWER(name) FROM media.channel
       UNION
-      SELECT handle FROM media.channel
+      SELECT ('@' || handle) FROM media.channel
       UNION
-      SELECT regexp_split_to_table(LOWER(name), '\s+') AS value
+      SELECT regexp_split_to_table(LOWER(title), '\s+') AS value
       FROM media.post
     )
 SELECT
